@@ -1,0 +1,249 @@
+.breadcrumb{
+    margin-top: 30px;
+    background-color:white !important;
+    li{
+        .active {
+            color: $base-pink !important;
+        }
+        a{
+            color: $brown;
+            font-weight: 500;
+        }
+        
+    }
+}
+
+.detail-mua{
+    border:1.5px solid $base-pink;
+    box-shadow: 10px 10px 10px $base-pink;
+    padding:20px;
+    color: $pink-brown;
+    line-height: 2px;
+    .card-top{
+        img{
+            width: 80px;
+            border-radius:100%;
+        }
+        p{
+            font-weight: 600;
+            position: relative;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            font-size: 20px;
+        }
+
+        p::before {
+            content:'';
+            position: absolute;
+            background-color: pink;
+            width: 60%;
+            height: 3px;
+            bottom: -14px;
+            right:30px;
+        }
+
+    }
+    .badge{
+        background-color: $greyish;
+        color: $pink-brown;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+    .card-logo{
+        font-size: 14px;
+        color: rgba(122, 103, 106, 0.781);
+        .img-logo{
+            width: 28px;
+        }
+        p {
+            font-weight: 400;
+            position: relative;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        p::before {
+            content:'';
+            position: absolute;
+            background-color: rgba(255, 192, 203, 0.342);
+            width: 30%;
+            height: 2px;
+            top: -10px;
+            left:30px;
+        }
+        p::after {
+            content: '';
+            position: absolute;
+            background-color: rgba(255, 192, 203, 0.342);
+            width: 50%;
+            height: 2px;
+            bottom: -10px;
+            left: 30px;
+        }
+        .btn-form{
+            color: $pink-brown;
+            border-radius: 20px;
+            background-color: $brown;
+        }
+
+    }
+}
+
+    .nav-tabs{
+        border: none;
+        .nav-link {
+            color:$pink-brown;
+            font-weight: 500;
+        }
+
+        .nav-link.active {
+            border: none;
+            position: relative;
+            color: pink;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: rgb(255, 192, 203);
+                width: 40%;
+                height: 3px;
+                bottom: 0px;
+                left: 25%;
+            }
+        }
+    }
+    
+#pricelist{
+    .card{
+        border: 1.5px solid $base-pink;
+        box-shadow: 10px 10px 10px $base-pink;
+        margin-top: 18px;
+        padding: 20px;
+        .paket{
+            h5 {
+                color: $pink-brown;
+                font-weight: 500;
+
+                margin-bottom: 0px;
+            }
+            p{
+                background-color: $brown;
+                color:white;
+                padding:8px;
+                font-size: 13px;
+                border-radius:3px;
+                font-weight: 500;
+                margin-bottom: 0px;
+            }
+        }   
+        
+    }
+    h6{
+        font-weight: 400;
+        position: relative;
+        color: $dark-greyish;
+    }
+    h6::before {
+        content: '';
+        position: absolute;
+        background-color: rgba(255, 192, 203, 0.342);
+        width: 8%;
+        height: 2px;
+        bottom:-1px;
+        left: 0%;
+    }
+    button{
+        font-weight: 400;
+        background-color: $greyish;
+        color:$pink-brown;
+        display: inline-block;
+        padding:5px;
+        border-radius:30px;
+        text-align: center;
+    }
+    .modal-size{
+        .modal-content{
+            padding:20px;
+            h3{
+                color: $pink-brown;
+                font-size: 40px;
+            }
+            p{
+                font-size: 40px;
+                color: $pink-brown;
+            }
+            ul{
+                
+                margin-left:30px;
+                li{
+                    font-size: 20px;
+                    color: $pink-brown;
+                }
+            }
+            img{
+                width:300px;
+            }
+        }
+    }
+    
+   
+}
+
+
+#gallery{
+    margin-top: 30px;
+    border: 1.5px solid $base-pink;
+    box-shadow: 10px 10px 10px $base-pink;
+    border-radius: 15px;
+    img{
+        min-height: 300px;
+        max-height: 300px;
+        width: 220px;
+        border-radius: 15px;
+        background-size: cover;
+    }
+}
+
+#review{
+    form{
+        .btn-post{
+            border-radius: 30px;
+            width:100%;
+            
+        }
+    }
+    .review{
+        h5{
+            border: none;
+            position: relative;
+            color:$brown;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: $brown;
+                width: 30%;
+                height: 3px;
+                bottom: -1px;
+                left: 0px;
+            }
+        }
+        .card-review{
+            background-color: $base-pink;
+            border:none;
+            color:$brown;
+            margin-top:30px;
+        }
+    }
+    .login{
+        a{
+            border-radius: 30px;
+        }
+    }
+}
+.login{
+    a{
+        border-radius: 30px;
+    }
+}

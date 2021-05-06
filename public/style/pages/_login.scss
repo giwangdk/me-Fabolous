@@ -1,0 +1,41 @@
+.login-page{
+    h1{
+        font-size: 45px;
+        margin-top:90px;
+        color:$pink-brown;
+        font-weight:600;
+        text-align: left;
+    }
+
+    .card{
+        width:400px;
+        border-radius: 20px;
+       
+
+        label{
+            font-size:20px;
+            color:$brown;
+        }
+
+        input{
+            border-radius:20px;
+            border:none;
+            background-color: $base-pink;
+        }
+
+        .btn-login{
+            border-radius:30px;
+            background-color: $compo-pink;
+            border:none;
+            color:white;
+            padding:10px;
+        }
+        .btn-register{
+            border-radius:30px;
+            background-color: $base-pink;
+            border:none;
+            color:$pink-brown;
+            padding:10px;
+        }
+    }
+}

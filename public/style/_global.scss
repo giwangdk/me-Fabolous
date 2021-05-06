@@ -1,0 +1,20 @@
+$compo-pink:#be8b7c ;
+$base-pink : #f8f3ed ;
+$pink-brown:#683B2B;
+$brown: #966f6f;
+$greyish:#f3bdbd;
+$dark-greyish:#92766eec;
+    
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+}
+.bg-gradient-primary{
+    background-color: $pink-brown !important;
+}
+

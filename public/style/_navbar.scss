@@ -1,0 +1,41 @@
+
+
+.navbar-book{
+    background-color: white;
+    .navbar-brand{
+        font-size: 25px;
+        font-weight: 700;
+        color: $dark-greyish;
+        
+        span{
+            color: $pink-brown;
+        }
+    }
+    
+    .nav-item{
+    .nav-link{
+        font-size: 15px;
+        font-weight: 500;
+        color: $pink-brown;
+
+        :hover{
+            color: $greyish;
+        }
+    }
+    .active{
+            color: $compo-pink;
+        }
+        
+    
+    .btn-pink{
+        color:white;
+        border-radius: 20px;
+        background-color: $compo-pink;
+    
+    :hover{
+        background-color: $greyish;
+    }
+    }
+    }
+
+}
