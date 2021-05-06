@@ -10972,7 +10972,7 @@ footer p {
 }
 
 .page-categories {
-  margin-top: 200px;
+  margin-top: 50px;
 }
 
 .page-categories .card-categories {
@@ -11245,10 +11245,6 @@ footer p {
   width: 300px;
 }
 
-#pricelist .login a {
-  border-radius: 30px;
-}
-
 #gallery {
   margin-top: 30px;
   border: 1.5px solid #f8f3ed;
@@ -11293,7 +11289,21 @@ footer p {
   margin-top: 30px;
 }
 
+#review .login a {
+  border-radius: 30px;
+}
+
+.login a {
+  border-radius: 30px;
+}
+
 .form-book {
   margin-top: 87px;
+}
+
+.text {
+  margin-top: 200px;
+  margin-bottom: 200px;
+  color: #683B2B;
 }
 /*# sourceMappingURL=main.css.map */

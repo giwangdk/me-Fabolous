@@ -13,7 +13,7 @@
                 <a class="nav-link" href="{{route('categories')}}">book MUA</a>
                 </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">Tentang</a>
+            <a class="nav-link" href="/about">About</a>
             </li>
            
         </ul>
