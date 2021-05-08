@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Book- Me.Fabolous
+    Book- Me.Fabulous
 @endsection
 
 

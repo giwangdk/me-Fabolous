@@ -11,7 +11,7 @@
                 <!-- Logo icon -->
                 <a href="index.html">
                     <span class="logo-text" style="font-weight: 600; letter-spacing:2px;">
-                    me.Fabolous
+                    me.Fabuolous
                     </span>
                 </a>
             </div>

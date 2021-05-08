@@ -35,6 +35,7 @@ Route::prefix('admin')
         Route::resource('makeupartist', 'MakeupartistController');
         Route::resource('gallery', 'GalleryController');
         Route::resource('pricelist', 'PricelistController');
+        Route::resource('review', 'ReviewController');
     });
 
 

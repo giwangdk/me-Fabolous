@@ -7,7 +7,7 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-7 align-self-center">
-            <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">List of Users<!</h3>
+            <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">List of Reviews<!</h3>
             <div class="d-flex align-items-center">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb m-0 p-0">
@@ -24,18 +24,14 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('user.create')}}" class="btn btn-primary mb-3">
-                        Add User
-                    </a>
                     <div class="table-responsive">
                         <table class="table-hover scroll-horizontal-vertical w-100" id="crudTable">
                             <thead>
-                                <tr>
+                                <tr> 
                                     <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Roles</th>
-                                    <th>Action</th>
+                                    <th>Review</th>
+                                    <th>User</th>
+                                    <th>Makeup artist</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -58,16 +54,9 @@
             },
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'name', name: 'name'},
-                {data: 'email', name: 'email'},
-                {data: 'roles', name: 'roles'},
-                {
-                    data: 'action', 
-                    name: 'action',
-                    orderable: false,
-                    scrollable: false,
-                    width: '15%',
-                },
+                {data: 'review', name: 'review'},
+                {data: 'author.name', name: 'author.name'},
+                {data: 'mua.name', name: 'mua.name'},
             ],
         })
     </script>

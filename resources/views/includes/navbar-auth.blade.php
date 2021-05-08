@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-book fixed-top" data-aos="fade-down">
-    <a class="navbar-brand" href="#">Me. <span>Fabolous</span></a>
+    <a class="navbar-brand" href="#">Me. <span>Fabulous</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
