@@ -162,22 +162,23 @@
         border-radius:30px;
         text-align: center;
     }
-    .modal-size{
-        .modal-content{
+    .modal-content{
+        .modal-body{
             padding:20px;
             h3{
                 color: $pink-brown;
-                font-size: 40px;
+                font-size: 30px;
+                text-align: left;
             }
             p{
-                font-size: 40px;
+                font-size: 15px;
                 color: $pink-brown;
             }
             ul{
                 
                 margin-left:30px;
                 li{
-                    font-size: 20px;
+                    font-size: 15px;
                     color: $pink-brown;
                 }
             }
@@ -196,12 +197,25 @@
     border: 1.5px solid $base-pink;
     box-shadow: 10px 10px 10px $base-pink;
     border-radius: 15px;
-    img{
-        min-height: 300px;
-        max-height: 300px;
-        width: 220px;
+    .mua-img{
+        
+        width: 205px;
         border-radius: 15px;
         background-size: cover;
+
+        
+    }
+    .mua-img:hover{
+        opacity: 0.7;
+    }
+
+    .modal{
+        img{
+            width: 300px;
+        border-radius: none;
+        background-size: cover;
+        }
+
     }
 }
 
@@ -246,4 +260,8 @@
     a{
         border-radius: 30px;
     }
+}
+
+#description{
+    padding:20px;
 }

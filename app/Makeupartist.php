@@ -17,7 +17,6 @@ class Makeupartist extends Model
         'instagram',
         'whatsapp',
         'description',
-        'category_id',
     ];
     protected $hidden = [];
     public function galleries()

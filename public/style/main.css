@@ -11218,30 +11218,31 @@ footer p {
   text-align: center;
 }
 
-#pricelist .modal-size .modal-content {
+#pricelist .modal-content .modal-body {
   padding: 20px;
 }
 
-#pricelist .modal-size .modal-content h3 {
+#pricelist .modal-content .modal-body h3 {
   color: #683B2B;
-  font-size: 40px;
+  font-size: 30px;
+  text-align: left;
 }
 
-#pricelist .modal-size .modal-content p {
-  font-size: 40px;
+#pricelist .modal-content .modal-body p {
+  font-size: 15px;
   color: #683B2B;
 }
 
-#pricelist .modal-size .modal-content ul {
+#pricelist .modal-content .modal-body ul {
   margin-left: 30px;
 }
 
-#pricelist .modal-size .modal-content ul li {
-  font-size: 20px;
+#pricelist .modal-content .modal-body ul li {
+  font-size: 15px;
   color: #683B2B;
 }
 
-#pricelist .modal-size .modal-content img {
+#pricelist .modal-content .modal-body img {
   width: 300px;
 }
 
@@ -11253,11 +11254,19 @@ footer p {
   border-radius: 15px;
 }
 
-#gallery img {
-  min-height: 300px;
-  max-height: 300px;
-  width: 220px;
+#gallery .mua-img {
+  width: 205px;
   border-radius: 15px;
+  background-size: cover;
+}
+
+#gallery .mua-img:hover {
+  opacity: 0.7;
+}
+
+#gallery .modal img {
+  width: 300px;
+  border-radius: none;
   background-size: cover;
 }
 
@@ -11297,13 +11306,23 @@ footer p {
   border-radius: 30px;
 }
 
+#description {
+  padding: 20px;
+}
+
 .form-book {
-  margin-top: 87px;
+  margin-top: 120px;
 }
 
 .text {
   margin-top: 200px;
   margin-bottom: 200px;
   color: #683B2B;
+}
+
+.text .btn-primary {
+  padding: 10px;
+  width: 50%;
+  border-radius: 20px;
 }
 /*# sourceMappingURL=main.css.map */

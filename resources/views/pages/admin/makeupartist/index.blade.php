@@ -38,7 +38,6 @@
                                     <th>Instagram</th>
                                     <th>Whatsapp</th>
                                     <th>Description</th>
-                                    <th>Category</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -68,7 +67,6 @@
                 {data: 'instagram', name: 'instagram'},
                 {data: 'whatsapp', name: 'whatsapp'},
                 {data: 'description', name: 'description'},
-                {data: 'category.name', name: 'category.name'},
                 {
                     data: 'action', 
                     name: 'action',

@@ -64,16 +64,6 @@
                                 <label >Description</label>
                                 <textarea class="form-control" id="editor" name="description" rows="3" value="{{old('description', '')}}"></textarea>
                                 </div>
-                                <label for="">Category</label>
-                                <div class="form-check">
-                                    @foreach ($categories as $category)
-                                    <input class="form-check-input" type="checkbox" value="{{$category->id}}" id="category_d" name="category_id">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                    {{$category->name}}
-                                    </label>
-                                    @endforeach
-                                    
-                                </div>
                                 <div class="col text-right">
                                     <button type="submit" class="btn btn-primary ">Add</button>
                                 </div>

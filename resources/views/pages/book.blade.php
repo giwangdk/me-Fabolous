@@ -41,6 +41,13 @@
                             @endforeach
                             </select>
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="date">Date </label>
+                                <br>
+                            <input type="date" id="date" name="date"
+                                value="2021-03-22"
+                                min="2021-01-01" max="2021-12-31">
+                        </div>
                         </div>
                         <div class="form-group">
                         <label for="inputAddress">Address</label>
@@ -50,41 +57,9 @@
                             
                         <div class="form-group">
                         <br>
-                        <button type="submit" class="btn btn-primary ">Book</button>
+                        
+                        <a class ="btn btn-primary" 
+                        href="https://wa.me/62{{$mua->whatsapp}}?text=Halo%20kak%20{{$mua->name}}!%0APerkenalkan%20saya%20....%2C%20ingin%20booking%20makeup%20untuk%20tanggal%20...%20apakah%20tersedia%3F%20Terimakasih">Book via WhatsApp</a>
+                        
                     </form>
-                    <?php 
-
-                        if(isset($_POST['submit']))
-                        {
-                            $whatsapp=$_POST['whatsapp'];
-                            $noHp=$_POST['noHp'];
-                            $data = [
-                            'whatsapp' => $whatsapp, // Receivers phone
-                            'noHp' => $noHp, // Message
-                        ];
-                        $json = json_encode($data); // Encode data to JSON
-                        // URL for request POST /message
-                        $url = 'https://eu138.chat-api.com/instance136593/message?token=9d4j8zvj4eantnmr';
-                        // Make a POST request
-                        $options = stream_context_create(['http' => [
-                                'method'  => 'POST',
-                                'header'  => 'Content-type: application/json',
-                                'content' => $json
-                            ]
-                        ]);
-                        // Send a request
-                        $result = file_get_contents($url, false, $options);
-                        print_r($result);
-                        }
-
-
-
-
-                        ?>
-                                        </div>
-                                    </div>
-                                
-                            </div>
-                            
-                            </div>
-@endsection  
+ @endsection  

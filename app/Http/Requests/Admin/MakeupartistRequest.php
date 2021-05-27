@@ -30,7 +30,6 @@ class MakeupartistRequest extends FormRequest
             'instagram' => 'required',
             'whatsapp' => 'required',
             'description' => 'required',
-            'category_id' => 'required',
         ];
     }
 }

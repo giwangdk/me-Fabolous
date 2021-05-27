@@ -74,22 +74,26 @@
                                     <div class="modal-content">
                                         <div class="modal-body p-0">
                                                 <div class="row">
-                                                    <div class="col-6 p-4 text-justify">
+                                                    <div class="col-lg-6 col-12 p-4 text-justify">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                          </button>
                                                         <h3>{{$item->name}}</h3>
+                                                        
                                                         <h5 class="text-muted mb-3">Description</h5>
                                                         {!! $item->description !!}
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="col-lg-6 col-12">
                                                             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                                                                 <div class="carousel-inner">
                                                                 <div class="carousel-item active">
-                                                                    <img src="/images/harsmakeup/165520604_816392108973225_2791174638957469438_n.jpg" class="d-block w-100" alt="...">
+                                                                    <img src="/images/ineke/WhatsApp Image 2021-04-01 at 7.04.29 AM.jpeg" class="d-block w-100" alt="...">
                                                                 </div>
                                                                 <div class="carousel-item">
-                                                                    <img src="/images/harsmakeup/165950063_1046449902531317_1044269296488041616_n.jpg" class="d-block w-100" alt="...">
+                                                                    <img src="/images/liziana_makeup/WhatsApp Image 2021-04-01 at 12.12.54 AM (6).jpeg" class="d-block w-100" alt="...">
                                                                 </div>
                                                                 <div class="carousel-item">
-                                                                    <img src="/images/harsmakeup/165520604_816392108973225_2791174638957469438_n.jpg" class="d-block w-100" alt="...">
+                                                                    <img src="/images/meys_makeup/IMG_0177.JPG" class="d-block w-100" alt="...">
                                                                 </div>
                                                                 </div>
                                                             </div>
@@ -117,10 +121,14 @@
                         @auth
                         <div class="row p-3">
                             @foreach ($mua->galleries as $gallery)
-                                <div class="col-4 mt-3">
-                                    <img src="{{Storage::url($gallery->photos)}}" alt="">
-                                </div>      
+                                <div class="col-lg-4 col-6 mt-3" data-toggle="modal" data-target="#modal{{$gallery->id}}">
+                                    <img src="{{Storage::url($gallery->photos)}}" alt="" class="mua-img" >
+                                </div>  
+                                <div class="modal fade" id="modal{{$gallery->id}}" tabindex="-1" role="dialog" aria-labelledby="i" aria-hidden="true">
+                                            <img src="{{Storage::url($gallery->photos)}}" class="modal-dialog modal-dialog-centered modal-sm "  >
+                                    </div>
                                 @endforeach
+                                
                         </div>
                         @else 
                         <div class="login d-flex justify-content-center flex-column align-items-center mt-5">
