@@ -70,7 +70,8 @@ class GalleryController extends Controller
      */
     public function store(GalleryRequest $request)
     {
-        $data['photos'] = $request->file('photos')->store('assets/gallery', 'public');
+
+        $data['photos'] = $request->file('photos')->move('assets/gallery', $request->file('photos')->getClientOriginalName());
         $data['mua_id'] = $request->mua_id;
         Gallery::create($data);
 

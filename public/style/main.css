@@ -10835,7 +10835,8 @@ body {
 }
 
 .navbar-book {
-  background-color: white;
+  padding: 15px;
+  background-color: white !important;
 }
 
 .navbar-book .navbar-brand {
@@ -10854,22 +10855,10 @@ body {
   color: #683B2B;
 }
 
-.navbar-book .nav-item .nav-link :hover {
-  color: #f3bdbd;
-}
-
-.navbar-book .nav-item .active {
-  color: #be8b7c;
-}
-
 .navbar-book .nav-item .btn-pink {
   color: white;
   border-radius: 20px;
   background-color: #be8b7c;
-}
-
-.navbar-book .nav-item .btn-pink :hover {
-  background-color: #f3bdbd;
 }
 
 footer {
@@ -11020,7 +11009,7 @@ footer p {
 }
 
 .login-page .card label {
-  font-size: 20px;
+  font-size: 18px;
   color: #966f6f;
 }
 
@@ -11028,6 +11017,10 @@ footer p {
   border-radius: 20px;
   border: none;
   background-color: #f8f3ed;
+}
+
+.login-page .card .custom-radio label {
+  font-size: 15px;
 }
 
 .login-page .card .btn-login {
@@ -11046,21 +11039,24 @@ footer p {
   padding: 10px;
 }
 
-.breadcrumb {
-  margin-top: 30px;
+.page-detail {
+  margin-top: 120px;
+}
+
+.page-detail .breadcrumb {
   background-color: white !important;
 }
 
-.breadcrumb li .active {
+.page-detail .breadcrumb li .active {
   color: #f8f3ed !important;
 }
 
-.breadcrumb li a {
+.page-detail .breadcrumb li a {
   color: #966f6f;
   font-weight: 500;
 }
 
-.detail-mua {
+.page-detail .detail-mua {
   border: 1.5px solid #f8f3ed;
   -webkit-box-shadow: 10px 10px 10px #f8f3ed;
           box-shadow: 10px 10px 10px #f8f3ed;
@@ -11069,12 +11065,16 @@ footer p {
   line-height: 2px;
 }
 
-.detail-mua .card-top img {
-  width: 80px;
+.page-detail .detail-mua .card-mua {
+  height: 70px;
+}
+
+.page-detail .detail-mua .card-mua img {
+  width: 60px;
   border-radius: 100%;
 }
 
-.detail-mua .card-top p {
+.page-detail .detail-mua .card-mua p {
   font-weight: 600;
   position: relative;
   margin-top: 30px;
@@ -11083,7 +11083,7 @@ footer p {
   font-size: 20px;
 }
 
-.detail-mua .card-top p::before {
+.page-detail .detail-mua .card-mua p::before {
   content: '';
   position: absolute;
   background-color: pink;
@@ -11093,23 +11093,23 @@ footer p {
   right: 30px;
 }
 
-.detail-mua .badge {
+.page-detail .detail-mua .badge {
   background-color: #f3bdbd;
   color: #683B2B;
   border-radius: 20px;
   font-size: 13px;
 }
 
-.detail-mua .card-logo {
+.page-detail .detail-mua .card-logo {
   font-size: 14px;
   color: rgba(122, 103, 106, 0.781);
 }
 
-.detail-mua .card-logo .img-logo {
+.page-detail .detail-mua .card-logo .img-logo {
   width: 28px;
 }
 
-.detail-mua .card-logo p {
+.page-detail .detail-mua .card-logo p {
   font-weight: 400;
   position: relative;
   margin-top: 30px;
@@ -11117,7 +11117,7 @@ footer p {
   letter-spacing: 1px;
 }
 
-.detail-mua .card-logo p::before {
+.page-detail .detail-mua .card-logo p::before {
   content: '';
   position: absolute;
   background-color: rgba(255, 192, 203, 0.342);
@@ -11127,7 +11127,7 @@ footer p {
   left: 30px;
 }
 
-.detail-mua .card-logo p::after {
+.page-detail .detail-mua .card-logo p::after {
   content: '';
   position: absolute;
   background-color: rgba(255, 192, 203, 0.342);
@@ -11137,28 +11137,28 @@ footer p {
   left: 30px;
 }
 
-.detail-mua .card-logo .btn-form {
+.page-detail .detail-mua .card-logo .btn-form {
   color: #683B2B;
   border-radius: 20px;
   background-color: #966f6f;
 }
 
-.nav-tabs {
+.page-detail .nav-tabs {
   border: none;
 }
 
-.nav-tabs .nav-link {
+.page-detail .nav-tabs .nav-link {
   color: #683B2B;
   font-weight: 500;
 }
 
-.nav-tabs .nav-link.active {
+.page-detail .nav-tabs .nav-link.active {
   border: none;
   position: relative;
   color: pink;
 }
 
-.nav-tabs .nav-link.active::before {
+.page-detail .nav-tabs .nav-link.active::before {
   content: '';
   position: absolute;
   background-color: pink;
@@ -11168,7 +11168,7 @@ footer p {
   left: 25%;
 }
 
-#pricelist .card {
+.page-detail #pricelist .card {
   border: 1.5px solid #f8f3ed;
   -webkit-box-shadow: 10px 10px 10px #f8f3ed;
           box-shadow: 10px 10px 10px #f8f3ed;
@@ -11176,13 +11176,13 @@ footer p {
   padding: 20px;
 }
 
-#pricelist .card .paket h5 {
+.page-detail #pricelist .card .paket h5 {
   color: #683B2B;
   font-weight: 500;
   margin-bottom: 0px;
 }
 
-#pricelist .card .paket p {
+.page-detail #pricelist .card .paket p {
   background-color: #966f6f;
   color: white;
   padding: 8px;
@@ -11192,13 +11192,13 @@ footer p {
   margin-bottom: 0px;
 }
 
-#pricelist h6 {
+.page-detail #pricelist h6 {
   font-weight: 400;
   position: relative;
   color: #92766eec;
 }
 
-#pricelist h6::before {
+.page-detail #pricelist h6::before {
   content: '';
   position: absolute;
   background-color: rgba(255, 192, 203, 0.342);
@@ -11208,7 +11208,7 @@ footer p {
   left: 0%;
 }
 
-#pricelist button {
+.page-detail #pricelist button {
   font-weight: 400;
   background-color: #f3bdbd;
   color: #683B2B;
@@ -11218,35 +11218,35 @@ footer p {
   text-align: center;
 }
 
-#pricelist .modal-content .modal-body {
+.page-detail #pricelist .modal-content .modal-body {
   padding: 20px;
 }
 
-#pricelist .modal-content .modal-body h3 {
+.page-detail #pricelist .modal-content .modal-body h3 {
   color: #683B2B;
   font-size: 30px;
   text-align: left;
 }
 
-#pricelist .modal-content .modal-body p {
+.page-detail #pricelist .modal-content .modal-body p {
   font-size: 15px;
   color: #683B2B;
 }
 
-#pricelist .modal-content .modal-body ul {
+.page-detail #pricelist .modal-content .modal-body ul {
   margin-left: 30px;
 }
 
-#pricelist .modal-content .modal-body ul li {
+.page-detail #pricelist .modal-content .modal-body ul li {
   font-size: 15px;
   color: #683B2B;
 }
 
-#pricelist .modal-content .modal-body img {
+.page-detail #pricelist .modal-content .modal-body img {
   width: 300px;
 }
 
-#gallery {
+.page-detail #gallery {
   margin-top: 30px;
   border: 1.5px solid #f8f3ed;
   -webkit-box-shadow: 10px 10px 10px #f8f3ed;
@@ -11254,34 +11254,34 @@ footer p {
   border-radius: 15px;
 }
 
-#gallery .mua-img {
+.page-detail #gallery .mua-img {
   width: 205px;
   border-radius: 15px;
   background-size: cover;
 }
 
-#gallery .mua-img:hover {
+.page-detail #gallery .mua-img:hover {
   opacity: 0.7;
 }
 
-#gallery .modal img {
+.page-detail #gallery .modal img {
   width: 300px;
   border-radius: none;
   background-size: cover;
 }
 
-#review form .btn-post {
+.page-detail #review form .btn-post {
   border-radius: 30px;
   width: 100%;
 }
 
-#review .review h5 {
+.page-detail #review .review h5 {
   border: none;
   position: relative;
   color: #966f6f;
 }
 
-#review .review h5::before {
+.page-detail #review .review h5::before {
   content: '';
   position: absolute;
   background-color: #966f6f;
@@ -11291,22 +11291,22 @@ footer p {
   left: 0px;
 }
 
-#review .review .card-review {
+.page-detail #review .review .card-review {
   background-color: #f8f3ed;
   border: none;
   color: #966f6f;
   margin-top: 30px;
 }
 
-#review .login a {
+.page-detail #review .login a {
   border-radius: 30px;
 }
 
-.login a {
+.page-detail .login a {
   border-radius: 30px;
 }
 
-#description {
+.page-detail #description {
   padding: 20px;
 }
 

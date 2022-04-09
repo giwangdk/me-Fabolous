@@ -1,6 +1,6 @@
-    <nav class="navbar navbar-expand-lg navbar-book fixed-top" data-aos="fade-down">
-        <a class="navbar-brand" href="#">Me. <span>Fabulous</span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    <nav class=" navbar navbar-expand-lg  fixed-top navbar-light bg-white navbar-book " data-aos="fade-down">
+        <a class="navbar-brand" href="/">Me. <span>Fabulous</span></a>
+        <button class="navbar-toggler btn-pink" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -52,14 +52,6 @@
                                     @csrf
                                 </form>
                     </li>
-                </ul>
-                <ul class="navbar-nav d-block d-lg-none">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                    Hi, {{Auth::user()->name}}
-                    </a>
-                </li>
-                
                 </ul>
             </ul>
         @endauth

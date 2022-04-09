@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-book fixed-top" data-aos="fade-down">
-    <a class="navbar-brand" href="#">Me. <span>Fabulous</span></a>
+<nav class="navbar navbar-expand-lg navbar-book fixed-top navbar-light bg-white" data-aos="fade-down">
+    <a class="navbar-brand" href="/">Me. <span>Fabulous</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,7 @@
             <a class="nav-link" href="{{route('categories')}}">book MUA</a>
             </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">Tentang</a>
+        <a class="nav-link" href="{{route('about')}}">Tentang</a>
         </li>
     </ul>
     </div>

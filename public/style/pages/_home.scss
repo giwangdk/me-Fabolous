@@ -1,127 +1,127 @@
-.page-content{
-    margin-top:80px;
+
+    .page-content{
+        margin-top:80px;
+        .container{
+            background-image: linear-gradient(to right bottom, #ffeeee, #feeeee, #fdefef, #fbefef, #faefef, #faf0f0, #f9f0f0, #f9f1f1, #faf3f3, #fbf5f5, #fcf7f7, #fdf9f9);
+            padding: 40px;
+            border-radius:20px
+        }
     
-    .container{
-        background-image: linear-gradient(to right bottom, #ffeeee, #feeeee, #fdefef, #fbefef, #faefef, #faf0f0, #f9f0f0, #f9f1f1, #faf3f3, #fbf5f5, #fcf7f7, #fdf9f9);
-        padding: 40px;
-        border-radius:20px
-    }
-
-    .tagline{
-        h1{
-            font-size:78px;
-            color:$pink-brown;
-            font-weight: 600;
-
-
-            @include media-breakpoint-down(md) {
-                font-size:50px;
+        .tagline{
+            h1{
+                font-size:78px;
+                color:$pink-brown;
+                font-weight: 600;
+    
+    
+                @include media-breakpoint-down(md) {
+                    font-size:50px;
+                }
+    
+    
+                span{
+                    color:$brown;
+                }
+    
+    
             }
-
-
-            span{
-                color:$brown;
+            p{
+                color: $greyish;
             }
-
-
+    
         }
-        p{
-            color: $greyish;
-        }
-
-    }
-
-    .search-tab{
-        input{
-            border-radius:10px;
-            background-color: white;
-            border: none;
-            height: 75px;
-            position:absolute;
-            box-shadow: 10px 10px 10px $greyish;
-
-        }
-        .btn-search{
-            position:absolute;
-            top:38px;
-            left:710px;
-        }
-        i{
-            color:$greyish;
-        }   
-    }
-
-    .image-display{
-        .card{
-            border:none;
-            img{
+    
+        .search-tab{
+            input{
                 border-radius:10px;
+                background-color: white;
+                border: none;
+                height: 75px;
+                position:absolute;
+                box-shadow: 10px 10px 10px $greyish;
+    
+            }
+            .btn-search{
+                position:absolute;
+                top:38px;
+                left:710px;
+            }
+            i{
+                color:$greyish;
+            }   
+        }
+    
+        .image-display{
+            .card{
+                border:none;
+                img{
+                    border-radius:10px;
+                }
+            }
+        }
+    
+        .img-right{
+            img{
+                background-size: cover;
+                margin:auto;
+    
             }
         }
     }
-
-    .img-right{
-        img{
-            background-size: cover;
-            margin:auto;
-
+    
+    .page-steps{
+        padding:50px;
+        background-color: white;
+        margin-top: 50px;
+        
+        h2{
+            color:$pink-brown;
+            font-weight: 500;
         }
-    }
-}
-
-.page-steps{
-    padding:50px;
-    background-color: white;
-    margin-top: 50px;
-    
-    h2{
-        color:$pink-brown;
-        font-weight: 500;
-    }
-    .card-step{
-        background-color: $compo-pink;
-        border-radius:20px;
-        color:$base-pink;
-        img{
-        width:100%;
-    }
-    }
-
-    
-}
-
-.page-categories{
-    margin-top:50px;
-    
-    .card-categories{
-        border:1.5px solid $base-pink;
-        box-shadow: 10px 10px 10px $base-pink;
-        padding: 20px;
-        border-radius: 20px;
-
-        .card-body {
-            padding: 0;
-        }
-    }
-
-    
-    }
-
-
-.page-mua{
-    .card{
-        border:1.5px solid $base-pink;
-        box-shadow: 10px 10px 10px $base-pink;
-        border-radius: 20px;
-        img{
-            width: 160px;
-            border-radius: 100%;
-            background-size: cover;
-        }
-        .btn-card{
+        .card-step{
             background-color: $compo-pink;
-            color: white;
-            border-radius: 30px;
+            border-radius:20px;
+            color:$base-pink;
+            img{
+            width:100%;
+        }
+        }
+    
+        
+    }
+    
+    .page-categories{
+        margin-top:50px;
+        
+        .card-categories{
+            border:1.5px solid $base-pink;
+            box-shadow: 10px 10px 10px $base-pink;
+            padding: 20px;
+            border-radius: 20px;
+    
+            .card-body {
+                padding: 0;
+            }
+        }
+    
+        
+        }
+    
+    
+    .page-mua{
+        .card{
+            border:1.5px solid $base-pink;
+            box-shadow: 10px 10px 10px $base-pink;
+            border-radius: 20px;
+            img{
+                width: 160px;
+                border-radius: 100%;
+                background-size: cover;
+            }
+            .btn-card{
+                background-color: $compo-pink;
+                color: white;
+                border-radius: 30px;
+            }
         }
     }
-}

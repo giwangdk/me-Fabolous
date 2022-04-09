@@ -9,27 +9,40 @@
     <div class="container">
         <nav aria-label="breadcrumb p-0">
             <ol class="breadcrumb p-0">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Book MUA</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Ineke Andini</li>
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/categories">Book MUA</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{$mua->name}}</li>
             </ol>
         </nav>
 
         <div class="row mt-5">
             <div class="col-md-4 col-sm-12">
                 <div class="card detail-mua">
-                    <div class="card-top d-flex">
+                    
+                    <div class="card-top card-mua d-flex row">
+                    <div class="col-2 mr-1">
                         <img src="{{Storage::url($mua->photo)}}" alt="">
+                    </div>
+                    <div class="col-9">
                         <p class="align-self-center ml-3">{{$mua->name}}</p>
                     </div>
-                    <p class="badge  mt-3 p-2"><i class="fas fa-thumbtack mr-2"></i>Selabintana</p>
-                    <div class="card-logo p-0 d-flex mt-1">
-                        <img src="/images/instagram.svg" class="img-logo mr-2" alt="">
-                        <p class="align-self-center">{{$mua->instagram}}</p>
                     </div>
-                    <div class="card-logo p-0 d-flex ">
-                        <img src="/images/whatsapp.svg" class="img-logo mr-2" alt="">
-                        <p class="align-self-center">{{$mua->whatsapp}}</p>
+                    <div class="row">
+                    <div class="col-12">
+                        <p class="badge  mt-3 p-2 d-block"><i class="fas fa-thumbtack mr-2"></i>Selabintana</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="card-logo p-0 d-flex">
+                            <img src="/images/instagram.svg" class="img-logo mr-2" alt="">
+                            <p class="align-self-center">{{$mua->instagram}}</p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card-logo p-0 d-flex ">
+                            <img src="/images/whatsapp.svg" class="img-logo mr-2" alt="">
+                            <p class="align-self-center">{{$mua->whatsapp}}</p>
+                        </div>
+                    </div>
                     </div>
                     <a href="{{route('book', $mua->id)}}" class="btn btn-primary w-100">Isi Form Book</a>
                 </div>
@@ -56,7 +69,7 @@
                         @auth
                         <div class="row d-flex flex-column p-3">
                             @foreach ($mua->pricelists as $item)
-                            <div class=" card col  ">
+                            <div class=" card col-12 mt-3 ">
                                 <div class="paket d-flex justify-content-between">
                                     <h5 class="paket">{{$item->name}}</h5>
                                     <p>Rp. {{number_format($item->price)}}</p>
@@ -125,7 +138,7 @@
                                     <img src="{{Storage::url($gallery->photos)}}" alt="" class="mua-img" >
                                 </div>  
                                 <div class="modal fade" id="modal{{$gallery->id}}" tabindex="-1" role="dialog" aria-labelledby="i" aria-hidden="true">
-                                            <img src="{{Storage::url($gallery->photos)}}" class="modal-dialog modal-dialog-centered modal-sm "  >
+                                            <img src="{{asset('storage/assets/gallery')}}/{{$gallery->photos}}" class="modal-dialog modal-dialog-centered modal-sm "  >
                                     </div>
                                 @endforeach
                                 

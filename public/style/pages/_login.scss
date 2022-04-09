@@ -13,7 +13,7 @@
        
 
         label{
-            font-size:20px;
+            font-size:18px;
             color:$brown;
         }
 
@@ -21,6 +21,9 @@
             border-radius:20px;
             border:none;
             background-color: $base-pink;
+        }
+        .custom-radio label{
+            font-size:15px;
         }
 
         .btn-login{
