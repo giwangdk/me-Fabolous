@@ -14,9 +14,9 @@ class AddMuaIdToReviewsTable extends Migration
     public function up()
     {
         Schema::table('reviews', function (Blueprint $table) {
-            $table->unsignedBigInteger('mua_id');
+            $table->unsignedBigInteger('mua_id')->nullable;
 
-            $table->foreign('mua_id')->references('id')->on('makeupartists');
+            $table->foreign('mua_id')->references('id')->on('makeupartists')->onDelete('set null');
         });
     }
 

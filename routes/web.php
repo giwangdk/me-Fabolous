@@ -26,11 +26,24 @@ Route::get('/book/{id}', 'BookController@index')->name('book');
 
 
 Route::prefix('admin')
-    // ->middleware(['auth', 'admin'])
+    ->middleware(['auth', 'admin'])
     ->namespace('Admin')
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('admin-dashboard');
         Route::resource('category', 'CategoryController');
+        Route::resource('user', 'UserController');
+        Route::resource('makeupartist', 'MakeupartistController');
+        Route::resource('gallery', 'GalleryController');
+        Route::resource('pricelist', 'PricelistController');
+        Route::resource('review', 'ReviewController');
+    });
+
+    
+    Route::prefix('mua-admin')
+    ->middleware(['auth', 'mua'])
+    ->namespace('MUA')
+    ->group(function () {
+        Route::get('/', 'DashboardController@index')->name('mua-dashboard');
         Route::resource('user', 'UserController');
         Route::resource('makeupartist', 'MakeupartistController');
         Route::resource('gallery', 'GalleryController');
