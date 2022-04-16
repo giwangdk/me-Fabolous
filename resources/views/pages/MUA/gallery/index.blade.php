@@ -1,7 +1,7 @@
-@extends('layouts.admin')
+@extends('layouts.mua')
 
 @section('title')
-    Dashboard Admin Gallery
+    Dashboard Admin MUA Gallery
 @endsection
 @section('content')
 <div class="page-breadcrumb">

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.mua')
 
 @section('title')
     Edit Pricelist

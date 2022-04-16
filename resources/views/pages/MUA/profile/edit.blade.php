@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.mua')
 
 @section('title')
     Make Up Artist
@@ -26,13 +26,15 @@
                 @endif
                 <div class="card mt-2">
                     <div class="card-body">
-                            <form class="" action="{{route('makeupartist.index')}}" method="POST" enctype="multipart/form-data">
+                            <form class="" action="{{route('makeupartist.update', $item->id)}}" method="POST" enctype="multipart/form-data">
+                                
+                                @method('PUT')
                                 @csrf
                                 <div class="form-group">
                                 <label for="name">Name MUA</label>
                                 <input type="text" class="form-control" id="name" 
                                 name="name" placeholder="Name of Makeupartist"
-                                value="{{old('name', '')}}">
+                                value="{{$item->name}}">
                                 </div>
                                 <div class="custom-file mb-3">
                                     <input type="file" class="custom-file-input" 
@@ -45,24 +47,24 @@
                                     <label for="location">Location</label>
                                     <input type="text" class="form-control" id="location" 
                                     name="location" placeholder="Location of Makeupartist"
-                                    value="{{old('location', '')}}">
+                                    value="{{$item->location}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="instagram">Instagram MUA</label>
                                     <input type="text" class="form-control" id="instagram" 
                                     name="instagram" placeholder="Instagram of Makeupartist"
-                                    value="{{old('instagram', '')}}">
+                                    value="{{$item->instagram}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="whatsapp">Whatsapp MUA</label>
                                     <input type="text" class="form-control" id="whatsapp" 
                                     name="whatsapp" placeholder="Whatsapp of Makeupartist"
-                                    value="{{old('whatsapp', '')}}">
+                                    value="{{$item->whatsapp}}">
                                 </div>
 
                                 <div class="form-group">
                                 <label >Description</label>
-                                <textarea class="form-control" id="editor" name="description" rows="3" value="{{old('description', '')}}"></textarea>
+                                <textarea class="form-control" id="editor" name="description" rows="3" value="{{$item->description}}"></textarea>
                                 </div>
                                 <div class="col text-right">
                                     <button type="submit" class="btn btn-primary ">Add</button>

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -30,7 +31,23 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+
+    public function redirectTo() {
+        $role = Auth::user()->role; 
+        switch ($role) {
+          case 'ADMIN':
+            return '/admin';
+            break;
+          case 'MUA':
+            return '/mua-admin';
+            break; 
+      
+          default:
+            return '/'; 
+          break;
+        }
+      }
 
     /**
      * Create a new controller instance.

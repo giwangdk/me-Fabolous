@@ -11325,4 +11325,8 @@ footer p {
   width: 50%;
   border-radius: 20px;
 }
+
+.img-logo {
+  width: 5px !important;
+}
 /*# sourceMappingURL=main.css.map */
