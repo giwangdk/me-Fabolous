@@ -49,7 +49,7 @@ class PricelistController extends Controller
                 ->rawColumns(['action'])
                 ->make();
         }
-        return view('pages.admin.pricelist.index');
+        return view('pages.mua.pricelist.index');
     }
 
     /**
@@ -61,7 +61,7 @@ class PricelistController extends Controller
     {
         $makeupartists =  Makeupartist::all();
         $categories = Category::all();
-        return view('pages.admin.pricelist.create', compact('categories', 'makeupartists'));
+        return view('pages.mua.pricelist.create', compact('categories', 'makeupartists'));
     }
 
     /**
@@ -101,7 +101,7 @@ class PricelistController extends Controller
         $categories = Category::all();
         $makeupartists =  Makeupartist::all();
 
-        return view('pages.admin.pricelist.edit', compact('item', 'categories', 'makeupartists'));
+        return view('pages.mua.pricelist.edit', compact('item', 'categories', 'makeupartists'));
     }
 
     /**

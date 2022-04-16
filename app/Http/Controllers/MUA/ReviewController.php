@@ -20,7 +20,7 @@ class ReviewController extends Controller
             $query = Review::with(['author', 'mua']);
             return DataTables::of($query)->make();
         }
-        return view('pages.admin.review.index');
+        return view('pages.mua.review.index');
     }
 
 

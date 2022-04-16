@@ -48,7 +48,7 @@ class GalleryController extends Controller
                 ->rawColumns(['action', 'photos'])
                 ->make();
         }
-        return view('pages.admin.gallery.index');
+        return view('pages.mua.gallery.index');
     }
 
     /**
@@ -59,7 +59,7 @@ class GalleryController extends Controller
     public function create()
     {
         $makeupartists = Makeupartist::all();
-        return view('pages.admin.gallery.create', compact('makeupartists'));
+        return view('pages.mua.gallery.create', compact('makeupartists'));
     }
 
     /**
