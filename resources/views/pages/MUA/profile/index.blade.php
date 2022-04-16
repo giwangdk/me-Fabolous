@@ -24,6 +24,9 @@
         padding: 10px 0;
         margin-bottom: 0
     }
+    .error{
+        color:red
+    }
 </style>
 @endpush
 @section('content')
@@ -34,18 +37,50 @@
                 <img src="/images/instagram.svg" alt="">
             </div>
             <div class="col-lg-8 col-md-6 d-flex flex-column justify-content-start text-left ml-lg-5">
-                    <p class="nama" >Ineke Andiny</p>
-                    <p class="alamat"><i class="fas fa-thumbtack mr-2"></i>Selabintana</p>
+                    <p class="nama" >
+                    {{Auth::user()->mua_name}}
+                    </p>
+                    <p class="alamat"><i class="fas fa-thumbtack mr-2"></i>
+                        @if ($mua)
+                        {{$mua->location()}}
+                    @else
+                        <span class="error">
+                            Lengkapi data Lokasi MUA mu!
+                        </span>
+                    @endif
+                    </p>
                     <div class="card-logo p-0 d-flex">
                         <img src="/images/instagram.svg" class="img-logo mr-2" alt="">
-                        <p>@inkekeandiny</p>
+                        <p>
+                            @if ($mua)
+                            {{$mua->instagram()}}
+                        @else
+                            <span class="error">
+                                Lengkapi data Instagram MUA mu!
+                            </span>
+                        @endif
+                        </p>
                     </div>
                     <div class="card-logo p-0 d-flex ">
                         <img src="/images/whatsapp.svg" class="img-logo mr-2" alt="">
-                        <p >08666643234</p>
+                        <p >
+                            @if ($mua)
+                            {{$mua->whatsapp()}}
+                        @else
+                            <span class="error">
+                                Lengkapi data Whatsapp MUA mu!
+                            </span>
+                        @endif
+                        </p>
                     </div>
                     <div class="description">
-                        <p>Jalan Selabintana, gang cimanggah, rt 05/02. Sukabumi 43112</p>
+                        <p>  @if ($mua)
+                            {{$mua->name()}}
+                        @else
+                            <span class="error">
+                                Lengkapi data Deskripsi MUA mu!
+                            </span>
+                        @endif</p>
                     </div>
                 </div>
                 </div>

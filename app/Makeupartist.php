@@ -7,10 +7,12 @@ use App\Gallery;
 use App\Category;
 use App\Pricelist;
 use App\Review;
+use App\User;
 
 class Makeupartist extends Model
 {
     protected $fillable = [
+        'user_id',
         'name',
         'photo',
         'location',
@@ -37,5 +39,10 @@ class Makeupartist extends Model
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Review;
+use App\Makeupartist;
 
 class User extends Authenticatable
 {
@@ -41,5 +42,9 @@ class User extends Authenticatable
     public function reviews()
     {
         return $this->hasMany(User::class, 'user_id', 'id');
+    }
+    public function mua()
+    {
+        return $this->hasMany(Makeupartist::class, 'user_id', 'id');
     }
 }

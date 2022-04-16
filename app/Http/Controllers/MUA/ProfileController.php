@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Admin\MakeupartistRequest;
+use App\User;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -19,39 +21,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        if (request()->ajax()) {
-            $query = Makeupartist::with(['category']);
-            return DataTables::of($query)
-                ->addColumn('action', function ($item) {
-                    return '
-                    <div class="btn-group">
-                        <div class="dropdown">
-                            <button class="btn brn-primary dropdown-toggle mr-1 mb-1
-                                type="button" data-toggle="dropdown">
-                                Aksi
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="' . route('makeupartist.edit', $item->id) . '">
-                                    Sunting
-                                    </a>
-                                    <form action="' . route('makeupartist.destroy', $item->id) . '" method="post">
-                                        ' . method_field('delete') . csrf_field() . '
-                                        <button type="submit" class="dropdown-item text-danger">
-                                        Hapus
-                                        </button>
-                                    </form>
-                                </div>
-                        </div>
-                    </div>
-                ';
-                })
-                ->editColumn('photo', function ($item) {
-                    return $item->photo ? '<img src="' . Storage::url($item->photo) . '" style="max-height:30px" />'  : '';
-                })
-                ->rawColumns(['action', 'photo'])
-                ->make();
-        }
-        return view('pages.mua.profile.index');
+        $mua = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
+        return view('pages.mua.profile.index', compact('mua'));
     }
 
     /**
