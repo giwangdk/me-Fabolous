@@ -33,7 +33,6 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Photos</th>
-                                    <th>MUA</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -58,7 +57,6 @@
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'photos', name: 'photos'},                
-                {data: 'makeupartist.name', name: 'mua.name'},
                 {
                     data: 'action', 
                     name: 'action',

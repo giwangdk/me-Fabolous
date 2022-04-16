@@ -35,15 +35,6 @@
                                         Upload makeupartist's photos
                                     </label>
                                 </div>
-                                <label for="">MUA</label>
-                                <div class="input-group">
-                                    <select name="mua_id" class="custom-select">
-                                @foreach ($makeupartists as $mua)
-                                    <option value="{{$mua->id}}">
-                                        {{$mua->name}}</option>
-                                    @endforeach
-                                </select>
-                                </div>
                                 <div class="col text-right mt-4">
                                     <button type="submit" class="btn btn-primary ">Add</button>
                                 </div>

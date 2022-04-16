@@ -35,7 +35,6 @@
                                     <th>Name</th>
                                     <th>Price</th>
                                     <th>Description</th>
-                                    <th>MUA</th>
                                     <th>Category</th>
                                     <th>Action</th>
                                 </tr>
@@ -63,7 +62,6 @@
                 {data: 'name', name: 'name'},             
                 {data: 'price', name: 'price'},
                 {data: 'description', name: 'description'},
-                {data: 'makeupartist.name', name: 'makeupartist.name'},
                 {data: 'category.name', name: 'category.name'},
                 {
                     data: 'action', 

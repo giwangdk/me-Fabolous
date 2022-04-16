@@ -31,7 +31,6 @@
                                     <th>ID</th>
                                     <th>Review</th>
                                     <th>User</th>
-                                    <th>Makeup artist</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -56,7 +55,6 @@
                 {data: 'id', name: 'id'},
                 {data: 'review', name: 'review'},
                 {data: 'author.name', name: 'author.name'},
-                {data: 'mua.name', name: 'mua.name'},
             ],
         })
     </script>

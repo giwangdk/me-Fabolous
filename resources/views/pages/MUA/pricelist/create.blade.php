@@ -45,15 +45,7 @@
                                 <label >Description</label>
                                 <textarea class="form-control" id="editor" name="description" rows="3" value="{{old('description', '')}}"></textarea>
                                 </div>
-                                <label for="">MUA</label>
-                                <div class="input-group">
-                                    <select name="mua_id" class="custom-select">
-                                @foreach ($makeupartists as $mua)
-                                    <option value="{{$mua->id}}">
-                                        {{$mua->name}}</option>
-                                    @endforeach
-                                </select>
-                                </div>
+                               
                                 <label for="">Category</label>
                                 <div class="input-group">
                                     <select name="category_id" class="custom-select">
