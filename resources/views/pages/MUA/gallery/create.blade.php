@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.mua')
 
 @section('title')
     Add new Gallery
@@ -26,7 +26,7 @@
                 @endif
                 <div class="card mt-2">
                     <div class="card-body">
-                            <form class="" action="{{route('gallery.index')}}" method="POST" enctype="multipart/form-data">
+                            <form class="" action="{{route('mua-gallery.index')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="custom-file mb-3">
                                     <input type="file" class="custom-file-input" 
@@ -34,6 +34,7 @@
                                     <label class="custom-file-label" for="validatedCustomFile">
                                         Upload makeupartist's photos
                                     </label>
+                                    <label for="">{{$makeupartist->name}}</label>
                                 </div>
                                 <div class="col text-right mt-4">
                                     <button type="submit" class="btn btn-primary ">Add</button>

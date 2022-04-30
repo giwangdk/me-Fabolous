@@ -64,12 +64,15 @@ class ProfileController extends Controller
         $data['user_id'] = Auth::user()->id;
 
         $item = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
-        if($item == 0){
+        if($item == "undefined"){
             Makeupartist::create($data);
+            User::where('id', Auth::user()->id)->update(array('mua_name'=>$request->name));
+
         }else{
             $item->update($data);
+            User::where('id', Auth::user()->id)->update(array('mua_name'=>$request->name));
         }
 
-        return redirect()->route('makeupartist.index');
+        return redirect()->route('myprofile.index');
     }
 }

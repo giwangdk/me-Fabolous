@@ -9,7 +9,7 @@ use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Admin\GalleryRequest;
 use App\Makeupartist;
-
+use Illuminate\Support\Facades\Auth;
 class GalleryController extends Controller
 {
     /**
@@ -20,7 +20,8 @@ class GalleryController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            $query = Gallery::with(['Makeupartist']);
+            $mua = Makeupartist::where('user_id', '=', Auth::user()->id)->get();
+            $query = Gallery::with([$mua]);
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
@@ -31,7 +32,7 @@ class GalleryController extends Controller
                                 Aksi
                                 </button>
                                 <div class="dropdown-menu">
-                                    <form action="' . route('gallery.destroy', $item->id) . '" method="post">
+                                    <form action="' . route('mua-gallery.destroy', $item->id) . '" method="post">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
                                         Hapus
@@ -58,8 +59,9 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        $makeupartists = Makeupartist::all();
-        return view('pages.mua.gallery.create', compact('makeupartists'));
+        
+        $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
+        return view('pages.mua.gallery.create', compact('makeupartist'));
     }
 
     /**
@@ -70,9 +72,9 @@ class GalleryController extends Controller
      */
     public function store(GalleryRequest $request)
     {
-
+        $mua = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         $data['photos'] = $request->file('photos')->move('assets/gallery', $request->file('photos')->getClientOriginalName());
-        $data['mua_id'] = $request->mua_id;
+        $data['mua_id'] = $mua->id;
         Gallery::create($data);
 
         return redirect()->route('gallery.index');
