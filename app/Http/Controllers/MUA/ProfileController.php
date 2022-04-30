@@ -25,33 +25,6 @@ class ProfileController extends Controller
         return view('pages.mua.profile.index', compact('mua'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $categories = Category::all();
-        return view('pages.mua.profile.create', compact('categories'));
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(MakeupartistRequest $request)
-    {
-        $data = $request->all();
-        $data['photo'] =  $request->file('photo')->move('assets/mua', $request->file('photo')->getClientOriginalName());
-
-
-        Makeupartist::create($data);
-
-        return redirect()->route('makeupartist.index');
-    }
 
     /**
      * Display the specified resource.
@@ -70,12 +43,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $item = Makeupartist::findOrFail($id);
-        $categories = Category::all();
-
-        return view('pages.mua.profile.edit', compact('item', 'categories'));
+        $item = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
+        return view('pages.mua.profile.edit', compact('item'));
     }
 
     /**
@@ -85,29 +56,19 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(MakeupartistRequest $request, $id)
+    public function update(MakeupartistRequest $request)
     {
         $data = $request->all();
 
         $data['photo'] = $request->file('photo')->move('assets/mua', $request->file('photo')->getClientOriginalName());
+        $data['user_id'] = Auth::user()->id;
 
-        $item = Makeupartist::findOrFail($id);
-
-        $item->update($data);
-
-        return redirect()->route('makeupartist.index');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $item = Makeupartist::findOrFail($id);
-        $item->delete();
+        $item = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
+        if($item == 0){
+            Makeupartist::create($data);
+        }else{
+            $item->update($data);
+        }
 
         return redirect()->route('makeupartist.index');
     }

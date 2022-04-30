@@ -42,7 +42,7 @@
                     </p>
                     <p class="alamat"><i class="fas fa-thumbtack mr-2"></i>
                         @if ($mua)
-                        {{$mua->location()}}
+                        {{$mua->location}}
                     @else
                         <span class="error">
                             Lengkapi data Lokasi MUA mu!
@@ -53,7 +53,7 @@
                         <img src="/images/instagram.svg" class="img-logo mr-2" alt="">
                         <p>
                             @if ($mua)
-                            {{$mua->instagram()}}
+                            {{$mua->instagram}}
                         @else
                             <span class="error">
                                 Lengkapi data Instagram MUA mu!
@@ -65,7 +65,7 @@
                         <img src="/images/whatsapp.svg" class="img-logo mr-2" alt="">
                         <p >
                             @if ($mua)
-                            {{$mua->whatsapp()}}
+                            {{$mua->whatsapp}}
                         @else
                             <span class="error">
                                 Lengkapi data Whatsapp MUA mu!
@@ -75,7 +75,7 @@
                     </div>
                     <div class="description">
                         <p>  @if ($mua)
-                            {{$mua->name()}}
+                            {{$mua->name}}
                         @else
                             <span class="error">
                                 Lengkapi data Deskripsi MUA mu!
@@ -85,7 +85,7 @@
                 </div>
                 </div>
                    
-                    <a href="#" class="btn btn-primary w-100 mt-5">Edit My MUA Profile</a>
+                    <a href="{{route('myprofile.edit')}}" class="btn btn-primary w-100 mt-5">Edit My MUA Profile</a>
                 </div>
 </div>
 

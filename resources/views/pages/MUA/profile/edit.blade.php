@@ -26,7 +26,7 @@
                 @endif
                 <div class="card mt-2">
                     <div class="card-body">
-                            <form class="" action="{{route('makeupartist.update', $item->id)}}" method="POST" enctype="multipart/form-data">
+                            <form class="" action="{{route('myprofile.update')}}" method="POST" enctype="multipart/form-data">
                                 
                                 @method('PUT')
                                 @csrf
@@ -34,7 +34,7 @@
                                 <label for="name">Name MUA</label>
                                 <input type="text" class="form-control" id="name" 
                                 name="name" placeholder="Name of Makeupartist"
-                                value="{{$item->name}}">
+                                value="{{$item->name ?? "None"}}">
                                 </div>
                                 <div class="custom-file mb-3">
                                     <input type="file" class="custom-file-input" 
@@ -47,24 +47,24 @@
                                     <label for="location">Location</label>
                                     <input type="text" class="form-control" id="location" 
                                     name="location" placeholder="Location of Makeupartist"
-                                    value="{{$item->location}}">
+                                    value="{{$item->location ?? "none"}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="instagram">Instagram MUA</label>
                                     <input type="text" class="form-control" id="instagram" 
                                     name="instagram" placeholder="Instagram of Makeupartist"
-                                    value="{{$item->instagram}}">
+                                    value="{{$item->instagram ?? "none"}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="whatsapp">Whatsapp MUA</label>
                                     <input type="text" class="form-control" id="whatsapp" 
                                     name="whatsapp" placeholder="Whatsapp of Makeupartist"
-                                    value="{{$item->whatsapp}}">
+                                    value="{{$item->whatsapp ?? "none"}}">
                                 </div>
 
                                 <div class="form-group">
                                 <label >Description</label>
-                                <textarea class="form-control" id="editor" name="description" rows="3" value="{{$item->description}}"></textarea>
+                                <textarea class="form-control" id="editor" name="description" rows="3" value="{{$item->description ?? "none"}}"></textarea>
                                 </div>
                                 <div class="col text-right">
                                     <button type="submit" class="btn btn-primary ">Add</button>

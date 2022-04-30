@@ -44,7 +44,9 @@ Route::prefix('admin')
     ->namespace('MUA')
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('mua-dashboard');
-        Route::resource('my-profile', 'ProfileController');
+        Route::get('/myprofile', 'ProfileController@index')->name('myprofile');
+        Route::get('/myprofile/edit', 'ProfileController@edit')->name('myprofile.edit');
+        Route::put('/myprofile', 'ProfileController@update')->name('myprofile.update');
         Route::resource('gallery', 'GalleryController');
         Route::resource('pricelist', 'PricelistController');
         Route::resource('review', 'ReviewController');
