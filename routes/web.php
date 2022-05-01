@@ -47,7 +47,7 @@ Route::prefix('admin')
         Route::get('/myprofile', 'ProfileController@index')->name('myprofile');
         Route::get('/myprofile/edit', 'ProfileController@edit')->name('myprofile.edit');
         Route::put('/myprofile', 'ProfileController@update')->name('myprofile.update');
-        Route::resource('mua-gallery', 'GalleryController');
+        Route::resource('gallery', 'GalleryController');
         Route::resource('pricelist', 'PricelistController');
         Route::resource('review', 'ReviewController');
     });

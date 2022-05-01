@@ -26,7 +26,7 @@
                 @endif
                 <div class="card mt-2">
                     <div class="card-body">
-                            <form class="" action="{{route('mua-gallery.index')}}" method="POST" enctype="multipart/form-data">
+                            <form class="" action="{{route('gallery.index')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="custom-file mb-3">
                                     <input type="file" class="custom-file-input" 
@@ -36,6 +36,7 @@
                                     </label>
                                     <label for="">{{$makeupartist->name}}</label>
                                 </div>
+                                <input type="text" name="mua_id" value={{$makeupartist->id}} hidden>
                                 <div class="col text-right mt-4">
                                     <button type="submit" class="btn btn-primary ">Add</button>
                                 </div>

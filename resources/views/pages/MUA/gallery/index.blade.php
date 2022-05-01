@@ -24,7 +24,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('mua-gallery.create')}}" class="btn btn-primary mb-3">
+                    <a href="{{route('gallery.create')}}" class="btn btn-primary mb-3">
                         Add Photo
                     </a>
                     <div class="table-responsive">

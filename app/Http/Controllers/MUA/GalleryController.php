@@ -19,9 +19,10 @@ class GalleryController extends Controller
      */
     public function index()
     {
+        
+        $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         if (request()->ajax()) {
-            $mua = Makeupartist::where('user_id', '=', Auth::user()->id)->get();
-            $query = Gallery::with([$mua]);
+            $query = Gallery::where('mua_id', '=', $makeupartist->id);
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
@@ -32,7 +33,7 @@ class GalleryController extends Controller
                                 Aksi
                                 </button>
                                 <div class="dropdown-menu">
-                                    <form action="' . route('mua-gallery.destroy', $item->id) . '" method="post">
+                                    <form action="' . route('gallery.destroy', $item->id) . '" method="post">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
                                         Hapus
@@ -73,8 +74,9 @@ class GalleryController extends Controller
     public function store(GalleryRequest $request)
     {
         $mua = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
-        $data['photos'] = $request->file('photos')->move('assets/gallery', $request->file('photos')->getClientOriginalName());
         $data['mua_id'] = $mua->id;
+        $data['photos'] = $request->file('photos')->move('assets/gallery', $request->file('photos')->getClientOriginalName());
+        
         Gallery::create($data);
 
         return redirect()->route('gallery.index');

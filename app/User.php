@@ -45,6 +45,6 @@ class User extends Authenticatable
     }
     public function mua()
     {
-        return $this->hasMany(Makeupartist::class, 'user_id', 'id');
+        return $this->belongsTo(Makeupartist::class, 'user_id', 'id');
     }
 }

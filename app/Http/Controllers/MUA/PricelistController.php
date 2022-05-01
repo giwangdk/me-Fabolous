@@ -9,6 +9,7 @@ use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Admin\PricelistRequest;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 use App\Makeupartist;
 
 class PricelistController extends Controller
@@ -20,8 +21,10 @@ class PricelistController extends Controller
      */
     public function index()
     {
+        
+        $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         if (request()->ajax()) {
-            $query = Pricelist::with(['category', 'makeupartist']);
+            $query = Pricelist::where('mua_id', '=', $makeupartist->id);
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
