@@ -45,6 +45,7 @@
                                 <label >Description</label>
                                 <textarea class="form-control" id="editor" name="description" rows="3" value="{{old('description', '')}}"></textarea>
                                 </div>
+                                
                                 <label for="">MUA</label>
                                 <div class="input-group">
                                     <select name="mua_id" class="custom-select">

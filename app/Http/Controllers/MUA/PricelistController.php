@@ -62,9 +62,10 @@ class PricelistController extends Controller
      */
     public function create()
     {
-        $makeupartists =  Makeupartist::all();
+        
+        $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         $categories = Category::all();
-        return view('pages.mua.pricelist.create', compact('categories', 'makeupartists'));
+        return view('pages.mua.pricelist.create', compact('categories', 'makeupartist'));
     }
 
     /**
@@ -76,6 +77,8 @@ class PricelistController extends Controller
     public function store(PricelistRequest $request)
     {
         $data = $request->all();
+        $mua = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
+        $data['mua_id'] = $mua->id;
         Pricelist::create($data);
 
         return redirect()->route('pricelist.index');
@@ -102,9 +105,10 @@ class PricelistController extends Controller
     {
         $item = Pricelist::findOrFail($id);
         $categories = Category::all();
-        $makeupartists =  Makeupartist::all();
+        
+        $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
 
-        return view('pages.mua.pricelist.edit', compact('item', 'categories', 'makeupartists'));
+        return view('pages.mua.pricelist.edit', compact('item', 'categories', 'makeupartist'));
     }
 
     /**
@@ -117,7 +121,9 @@ class PricelistController extends Controller
     public function update(PricelistRequest $request, $id)
     {
         $data = $request->all();
-
+        
+        $mua = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
+        $data['mua_id'] = $mua->id;
         $item = Pricelist::findOrFail($id);
 
         $item->update($data);

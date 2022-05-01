@@ -46,6 +46,7 @@
                                 <textarea class="form-control" id="editor" name="description" rows="3" value="{{old('description', '')}}"></textarea>
                                 </div>
                                
+                                <input type="text" name="mua_id" value={{$makeupartist->id}} hidden>
                                 <label for="">Category</label>
                                 <div class="input-group">
                                     <select name="category_id" class="custom-select">
