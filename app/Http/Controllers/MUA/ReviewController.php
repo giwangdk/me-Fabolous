@@ -4,6 +4,8 @@ namespace App\Http\Controllers\MUA;
 
 use App\Review;
 use App\Http\Controllers\Controller;
+use App\Makeupartist;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -16,8 +18,10 @@ class ReviewController extends Controller
      */
     public function index()
     {
+        $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         if (request()->ajax()) {
-            $query = Review::with(['author', 'mua']);
+            $query = Review::where('mua_id', '=', $makeupartist->id);
+            $query = Review::with(['author']);
             return DataTables::of($query)->make();
         }
         return view('pages.mua.review.index');

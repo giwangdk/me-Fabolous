@@ -25,6 +25,7 @@ class PricelistController extends Controller
         $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         if (request()->ajax()) {
             $query = Pricelist::where('mua_id', '=', $makeupartist->id);
+            $query = Pricelist::with(['category']);
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
