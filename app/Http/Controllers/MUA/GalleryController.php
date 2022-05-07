@@ -75,8 +75,8 @@ class GalleryController extends Controller
     {
         $mua = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         $data['mua_id'] = $mua->id;
-        $data['photos'] = $request->file('photos')->move('assets/gallery', $request->file('photos')->getClientOriginalName());
         
+        $data['photos'] = $request->file('photos')->store('assets/gallery', 'public');
         Gallery::create($data);
 
         return redirect()->route('gallery.index');

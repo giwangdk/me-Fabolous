@@ -74,7 +74,7 @@ class MakeupartistController extends Controller
     public function store(MakeupartistRequest $request)
     {
         $data = $request->all();
-        $data['photo'] =  $request->file('photo')->move('assets/mua', $request->file('photo')->getClientOriginalName());
+        $data['photo'] =  $request->file('photo')->store('assets/mua', 'public');
 
 
         Makeupartist::create($data);
@@ -118,7 +118,7 @@ class MakeupartistController extends Controller
     {
         $data = $request->all();
 
-        $data['photo'] = $request->file('photo')->move('assets/mua', $request->file('photo')->getClientOriginalName());
+        $data['photo'] =  $request->file('photo')->store('assets/mua', 'public');
 
         $item = Makeupartist::findOrFail($id);
 

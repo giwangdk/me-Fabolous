@@ -60,11 +60,11 @@ class ProfileController extends Controller
     {
         $data = $request->all();
 
-        $data['photo'] = $request->file('photo')->move('assets/mua', $request->file('photo')->getClientOriginalName());
+        $data['photo'] = $request->file('photo')->store('assets/mua', 'public');
         $data['user_id'] = Auth::user()->id;
 
         $item = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
-        if($item == "undefined"){
+        if($item == null){
             Makeupartist::create($data);
             User::where('id', Auth::user()->id)->update(array('mua_name'=>$request->name));
 
@@ -73,6 +73,6 @@ class ProfileController extends Controller
             User::where('id', Auth::user()->id)->update(array('mua_name'=>$request->name));
         }
 
-        return redirect()->route('myprofile.index');
+        return redirect()->route('myprofile');
     }
 }
