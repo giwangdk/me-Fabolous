@@ -13,7 +13,7 @@
                                     
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Applications</span></li>
-                        <li class="sidebar-item "> <a class="sidebar-link " href="{{route('category.index')}}"
+                        <li class="sidebar-item "> <a class="sidebar-link " href="{{route('myprofile')}}"
                             aria-expanded="false"><i data-feather="layers" class="feather-icon"></i><span
                                 class="hide-menu">My Profile
                             </span></a>

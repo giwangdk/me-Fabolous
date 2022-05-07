@@ -42,6 +42,10 @@
                 <li class="nav-item mt-3">
                     <a class="btn btn-pink" href="/admin">Dashboard </a>
                     </li>
+                    @elseif (Auth::user() && Auth::user()->roles == 'MUA')
+                    <li class="nav-item mt-3">
+                        <a class="btn btn-pink" href="/mua-admin">Dashboard </a>
+                        </li>
                 @endif
 
                     <li class="nav-item">
