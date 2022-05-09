@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddUserIdToMakeupartistTable extends Migration
+class AddUserIdToTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class AddUserIdToMakeupartistTable extends Migration
      */
     public function up()
     {
-        Schema::table('makeupartists', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id')->nullable;
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });
     }
 
@@ -27,7 +27,7 @@ class AddUserIdToMakeupartistTable extends Migration
      */
     public function down()
     {
-        Schema::table('makeupartists', function (Blueprint $table) {
+        Schema::table('transactions', function (Blueprint $table) {
             $table->dropForeign('user_id');
             $table->dropColumn('user_id');
         });
