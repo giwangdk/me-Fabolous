@@ -13,29 +13,29 @@
                     <img src="/images/human.png" alt="">
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <form>
+                    <form action="{{route("checkout")}}" method="POST" >
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama">
+                            <input type="text" class="form-control" id="nama" name="nama">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="noHp">Phone Number </label>
-                            <input type="text" class="form-control" id="noHp">
+                            <input type="text" class="form-control" id="noHp" name="phone_number">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="mua">Make Up Artist </label>
-                            <input type="text" class="form-control" id="mua" value="{{$mua->name}}">
+                            <input type="text" class="form-control" id="mua" value="{{$mua->name}}" name="mua_uid">
                         </div>
                         <input type="hidden" name="whatsapp" value="{{$mua->whatsapp}}">
                         <div class="form-group col-md-6">
                             <label for="inputState">Make Up</label>
                             
-                            <select id="inputState" class="form-control">
+                            <select id="inputState" class="form-control" name="price_id">
                                 @foreach ($mua->pricelists as $pricelist)
                                 <option value="{{$pricelist->id}}">{{$pricelist->name}}</option>
                             @endforeach
@@ -51,15 +51,20 @@
                         </div>
                         <div class="form-group">
                         <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="inputNotes">Notes</label>
+                            <textarea  class="form-control" id="inputNotes"  name="notes"  rows="4" cols="50" placeholder="Catatan Tambahan"></textarea>
+                            </div>
                         <div class="form-row">
                             
                         <div class="form-group">
                         <br>
                         
-                        <a class ="btn btn-primary" 
-                        href="https://wa.me/62{{$mua->whatsapp}}?text=Halo%20kak%20{{$mua->name}}!%0APerkenalkan%20saya%20....%2C%20ingin%20booking%20makeup%20untuk%20tanggal%20...%20apakah%20tersedia%3F%20Terimakasih">Book via WhatsApp</a>
+                        <button type="submit" class ="btn btn-primary" 
+                        >Checkout</button>
                         
                     </form>
  @endsection  

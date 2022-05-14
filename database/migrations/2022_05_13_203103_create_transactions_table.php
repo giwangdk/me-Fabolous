@@ -19,7 +19,8 @@ class CreateTransactionsTable extends Migration
             $table->string('email');
             $table->string('phone_number');
             $table->string('makeup');
-            $table->string('price');
+            $table->string('total_price');
+            $table->string('notes');
             $table->date('date');
             $table->longText('address');
             $table->string('status_pembayaran')->default('UNPAID');
