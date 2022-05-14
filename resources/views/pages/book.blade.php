@@ -13,7 +13,8 @@
                     <img src="/images/human.png" alt="">
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <form action="{{route("checkout")}}" method="POST" >
+                    <form action="{{route("checkout", $mua->id)}}" method="POST" >
+                        @csrf
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="nama">Nama</label>

@@ -23,7 +23,7 @@ Route::post('/detail/{id}', 'DetailController@store')->name('detail');
 Route::get('/book/{id}', 'BookController@index')->name('book');
 
 
-Route::post('/checkout', 'CheckoutController@process')->name('checkout');
+Route::post('/checkout/{id}', 'CheckoutController@process')->name('checkout');
 Route::post('/checkout/callback', 'CheckoutController@callback')->name('midtrans-callback');
 
 
