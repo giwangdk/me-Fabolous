@@ -52,7 +52,7 @@ class CheckoutController extends Controller
         $midtrans = [
             'transaction_details' =>[
                 'order_id' => $kode,
-                'order_amount' => (int) $name_price->price
+                'gross_amount' => (int) $name_price->price
             ],
             'customer_details' =>[
                 'nama'=>$request->nama,
