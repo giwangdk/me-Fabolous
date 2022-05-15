@@ -53,8 +53,29 @@ class CheckoutController extends Controller
             'transaction_details' =>[
                 'order_id' => $kode,
                 'order_amount' => (int) $name_price->price
-            ]
-        ]
+            ],
+            'customer_details' =>[
+                'nama'=>$request->nama,
+                'email'=>$request->email,
+                           'phone_number'=>$request->phone_number,
+               'address'=>$request->address,
+            ],
+            'enabled_payments' =>[
+                'gopay', 'permata_va', 'bank_transfer'
+            ],
+            'vtweb'=>[]
+            ];
+
+                        
+            try {
+                // Get Snap Payment Page URL
+                $paymentUrl = Snap::createTransaction($midtrans)->redirect_url;
+                
+                return redirect($paymentUrl);
+            }
+            catch (Exception $e) {
+                echo $e->getMessage();
+            }
     }
 
     public function callback(Request $request)
