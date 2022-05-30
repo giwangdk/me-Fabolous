@@ -37,6 +37,40 @@ class CheckoutController extends Controller
             'kode'=>$kode,
             'notes'=>$request->notes,
         ]);
+        
+        $item = Transaction::findOrFail($transactions->id);
+        return view('pages.detail-book', compact('item'));
+
+    }
+
+    public function detail(Request $request, $id)
+    {
+        $item = Transaction::findOrFail($id);
+        return view('pages.detail-book', compact('item'));
+    }
+
+    public function bayar(Request $request, $id)
+    {
+
+        $kode = 'STORE-'.mt_rand(000000, 999999);
+        $price_id = $request->price_id;
+        $name_price = Pricelist::where('id', '=', $price_id)->get()->first();
+
+        $transactions = Transaction::create([
+            'nama'=>$request->nama,
+            'mua_id'=>$id,
+            'user_id'=> Auth::user()->id,
+            'email'=>$request->email,
+            'phone_number'=>$request->phone_number,
+            'makeup'=>$price_id,
+            'total_price'=>$name_price->price,
+            'date'=>$request->date,
+            'address'=>$request->address,
+            'status_pembayaran'=>'UNPAID',
+            'status_penyewaan' => 'PENDING',
+            'kode'=>$kode,
+            'notes'=>$request->notes,
+        ]);
 
 
         //Konfigurasi Midtrans
