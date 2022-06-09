@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.mua')
 
 @section('title')
     Book- Me.Fabulous
@@ -21,16 +21,12 @@
 
 @section('content')
     <div class="form-book">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <img src="/images/human.png" alt="">
-                </div>
-                <div class="col-lg-6 col-md-12 detail">
-                    <h4 class="text-center">Confirm Your Booking!</h4>
+                    <h4 class="text-center">Detail Transaksi</h4>
                 <hr>
                 <h5>Detail Pesanan</h5>
-                <div class="row d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center">
                     <div class="col-6">
                         <h6 class="mb-2 mt-3">Makeup Artist</h6>
                         <h6 class="mb-2 mt-0">Jenis Makeup</h6>
@@ -54,7 +50,6 @@
                 
                 <a class="btn btn-logout text-center" href="{{route('bayar', $item->id)}}">Sign In </a>
                 </div>
-            </div>
         </div>
     </div>
  @endsection  

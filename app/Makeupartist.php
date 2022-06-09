@@ -8,6 +8,7 @@ use App\Category;
 use App\Pricelist;
 use App\Review;
 use App\User;
+use App\Transaction;
 
 class Makeupartist extends Model
 {
@@ -44,5 +45,9 @@ class Makeupartist extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'mua_id', 'id');
     }
 }

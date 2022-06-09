@@ -31,6 +31,10 @@ class Transaction extends Model
     }
     public function mua()
     {
-        return $this->belongsTo(Makeupartist::class, 'user_id', 'id');
+        return $this->belongsTo(Makeupartist::class, 'mua_id', 'id');
+    }
+    public function pricelist()
+    {
+        return $this->belongsTo(Pricelist::class, 'makeup', 'id');
     }
 }

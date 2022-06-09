@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Makeupartist;
 use App\Category;
+use App\Transaction;
 
 class Pricelist extends Model
 {
@@ -17,5 +18,9 @@ class Pricelist extends Model
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
+    }
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'makeup', 'id');
     }
 }

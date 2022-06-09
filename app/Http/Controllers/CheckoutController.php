@@ -45,32 +45,15 @@ class CheckoutController extends Controller
 
     public function detail(Request $request, $id)
     {
-        $item = Transaction::findOrFail($id);
+        $item = Transaction::with(['pricelist', 'mua'])->findOrFail($id);
         return view('pages.detail-book', compact('item'));
     }
 
     public function bayar(Request $request, $id)
     {
-
+        
+        $item = Transaction::with(['pricelist', 'mua'])->findOrFail($id);
         $kode = 'STORE-'.mt_rand(000000, 999999);
-        $price_id = $request->price_id;
-        $name_price = Pricelist::where('id', '=', $price_id)->get()->first();
-
-        $transactions = Transaction::create([
-            'nama'=>$request->nama,
-            'mua_id'=>$id,
-            'user_id'=> Auth::user()->id,
-            'email'=>$request->email,
-            'phone_number'=>$request->phone_number,
-            'makeup'=>$price_id,
-            'total_price'=>$name_price->price,
-            'date'=>$request->date,
-            'address'=>$request->address,
-            'status_pembayaran'=>'UNPAID',
-            'status_penyewaan' => 'PENDING',
-            'kode'=>$kode,
-            'notes'=>$request->notes,
-        ]);
 
 
         //Konfigurasi Midtrans
@@ -86,13 +69,13 @@ class CheckoutController extends Controller
         $midtrans = [
             'transaction_details' =>[
                 'order_id' => $kode,
-                'gross_amount' => (int) $name_price->price
+                'gross_amount' => (int) $item->total_price
             ],
             'customer_details' =>[
-                'nama'=>$request->nama,
-                'email'=>$request->email,
-                           'phone_number'=>$request->phone_number,
-               'address'=>$request->address,
+                'nama'=>$item->nama,
+                'email'=>$item->email,
+                           'phone_number'=>$item->phone_number,
+               'address'=>$item->address,
             ],
             'enabled_payments' =>[
                 'gopay', 'permata_va', 'bank_transfer'

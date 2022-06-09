@@ -24,6 +24,7 @@ Route::get('/book/{id}', 'BookController@index')->name('book');
 
 
 Route::post('/checkout/{id}', 'CheckoutController@process')->name('checkout');
+Route::get('/bayar/{id}', 'CheckoutController@bayar')->name('bayar');
 // Route::post('/detail-book/{id}', 'CheckoutController@detail')->name('detail-book');
 Route::post('/checkout/callback', 'CheckoutController@callback')->name('midtrans-callback');
 
@@ -55,6 +56,7 @@ Route::prefix('admin')
         Route::resource('gallery', 'GalleryController');
         Route::resource('pricelist', 'PricelistController');
         Route::resource('review', 'ReviewController');
+        Route::resource('transaction', 'TransactionController');
     });
 
 

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Review;
 use App\Makeupartist;
+use App\Transaction;
 
 class User extends Authenticatable
 {
@@ -41,10 +42,15 @@ class User extends Authenticatable
 
     public function reviews()
     {
-        return $this->hasMany(User::class, 'user_id', 'id');
+        return $this->hasMany(Review::class, 'user_id', 'id');
     }
     public function mua()
     {
         return $this->belongsTo(Makeupartist::class, 'user_id', 'id');
+    }
+    
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'user_id', 'id');
     }
 }
