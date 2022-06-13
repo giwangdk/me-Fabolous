@@ -32,6 +32,7 @@
                 <h5>Detail Pesanan</h5>
                 <div class="row d-flex justify-content-between align-items-center">
                     <div class="col-6">
+                        <h6>Book ID</h6>
                         <h6 class="mb-2 mt-3">Makeup Artist</h6>
                         <h6 class="mb-2 mt-0">Jenis Makeup</h6>
                         <h6 class="mb-2 mt-0">Notes</h6>
@@ -42,6 +43,7 @@
                     </div>
                     
                     <div class="col-6 text-right">
+                        <p class="mb-2">{{$item->kode}}</p>
                         <h6 class="mb-2 mt-3">{{$item->mua->name}}</h6>
                         <p class="mb-2">{{$item->pricelist->name}}</p>
                         <p class="mb-2">{{$item->notes}}</p>

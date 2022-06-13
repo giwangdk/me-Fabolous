@@ -1,4 +1,4 @@
-@extends('layouts.mua')
+@extends('layouts.admin')
 
 @section('title')
     Dashboard Admin Pricelist
@@ -30,12 +30,12 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Book Id</th>
+                                    <th>Makeup Artist</th>
                                     <th>Penyewa</th>
                                     <th>Jenis Makeup</th>
                                     <th>Date</th>
                                     <th>Status Pembayaran</th>
                                     <th>Status Penyewaan</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -58,19 +58,13 @@
             },
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'kode', name: 'kode'},
+                {data: 'kode', name: 'kode', width: '15%' },
+                {data: 'mua.name', name: 'mua.name' },
                 {data: 'user.name', name: 'user.name'},            
                 {data: 'pricelist.name', name: 'pricelist.name'},            
-                {data: 'date', name: 'date'}, 
+                {data: 'date', name: 'date', width: '15%'}, 
                 {data: 'status_pembayaran', name: 'status_pembayaran'},
                 {data: 'status_penyewaan', name: 'status_penyewaan'},
-                {
-                    data: 'action', 
-                    name: 'action',
-                    orderable: false,
-                    scrollable: false,
-                    width: '15%',
-                },
             ],
         })
     </script>

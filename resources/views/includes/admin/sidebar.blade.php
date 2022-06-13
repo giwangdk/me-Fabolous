@@ -35,6 +35,12 @@
                                     <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('review.index')}}"
                                         aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span
                                             class="hide-menu">Reviews</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('pricelist.index')}}"
+                                                aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
+                                                    class="hide-menu">Price Lists</span></a></li>
+                                                    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('transaction.index')}}"
+                                                        aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span
+                                                            class="hide-menu">Transaction</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

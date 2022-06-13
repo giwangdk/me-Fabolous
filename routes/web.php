@@ -42,6 +42,7 @@ Route::prefix('admin')
         Route::resource('gallery', 'GalleryController');
         Route::resource('pricelist', 'PricelistController');
         Route::resource('review', 'ReviewController');
+        Route::resource('transaction', 'TransactionController');
     });
 
     
