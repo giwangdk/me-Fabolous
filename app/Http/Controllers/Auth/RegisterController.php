@@ -34,7 +34,7 @@ class RegisterController extends Controller
     // protected $redirectTo = RouteServiceProvider::HOME;
 
     public function redirectTo() {
-        $role = Auth::user()->role; 
+        $role = Auth::user()->roles; 
         switch ($role) {
           case 'ADMIN':
             return '/admin';
@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'roles' => ['required', 'string', 'max:255'],
             'mua_name' => ['nullable', 'string', 'max:255','unique:users'],
             'is_store_open' => ['required'],
         ]);

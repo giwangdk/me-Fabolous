@@ -18,15 +18,15 @@
                                 class="hide-menu">My Profile
                             </span></a>
                     </li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('gallery.index')}}"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('gallery-mua.index')}}"
                                 aria-expanded="false"><i data-feather="image" class="feather-icon"></i><span
                                     class="hide-menu">Galleries</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('pricelist.index')}}"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('pricelist-mua.index')}}"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Price Lists</span></a></li>
                                     <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('review.index')}}"
                                         aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span
-                                            class="hide-menu">Reviews</span></a></li> <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('transaction.index')}}"
+                                            class="hide-menu">Reviews</span></a></li> <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('transaction-mua.index')}}"
                                                 aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span
                                                     class="hide-menu">Transactions</span></a></li>
                     </ul>

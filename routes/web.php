@@ -54,10 +54,10 @@ Route::prefix('admin')
         Route::get('/myprofile', 'ProfileController@index')->name('myprofile');
         Route::get('/myprofile/edit', 'ProfileController@edit')->name('myprofile.edit');
         Route::put('/myprofile', 'ProfileController@update')->name('myprofile.update');
-        Route::resource('gallery', 'GalleryController');
-        Route::resource('pricelist', 'PricelistController');
-        Route::resource('review', 'ReviewController');
-        Route::resource('transaction', 'TransactionController');
+        Route::resource('gallery', 'GalleryController', ['names' => 'gallery-mua']);
+        Route::resource('pricelist', 'PricelistController', ['names' => 'pricelist-mua']);
+        Route::resource('review', 'ReviewController', ['names' => 'review-mua']);
+        Route::resource('transaction', 'TransactionController', ['names' => 'transaction-mua']);
     });
 
 

@@ -58,10 +58,10 @@
             },
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'kode', name: 'kode'},
+                {data: 'kode', name: 'kode', width: '15%' },
                 {data: 'user.name', name: 'user.name'},            
                 {data: 'pricelist.name', name: 'pricelist.name'},            
-                {data: 'date', name: 'date'}, 
+                {data: 'date', name: 'date', width: '15%' }, 
                 {data: 'status_pembayaran', name: 'status_pembayaran'},
                 {data: 'status_penyewaan', name: 'status_penyewaan'},
                 {
@@ -69,7 +69,6 @@
                     name: 'action',
                     orderable: false,
                     scrollable: false,
-                    width: '15%',
                 },
             ],
         })
