@@ -26,9 +26,9 @@
                 <div class="d-flex d-lg-flex d-md-block align-items-center">
                     <div>
                         <div class="d-inline-flex align-items-center">
-                            <h2 class="text-dark mb-1 font-weight-medium">{{$users}}</h2>
+                            <h2 class="text-dark mb-1 font-weight-medium">{{$reviews}}</h2>
                         </div>
-                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">User</h6>
+                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Reviews</h6>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                         <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
@@ -40,8 +40,8 @@
             <div class="card-body">
                 <div class="d-flex d-lg-flex d-md-block align-items-center">
                     <div>
-                        <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium">{{$categories}}</h2>
-                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Category
+                        <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium">{{$transactions}}</h2>
+                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Transactions
                         </h6>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
@@ -55,9 +55,9 @@
                 <div class="d-flex d-lg-flex d-md-block align-items-center">
                     <div>
                         <div class="d-inline-flex align-items-center">
-                            <h2 class="text-dark mb-1 font-weight-medium">{{$mua}}</h2>
+                            <h2 class="text-dark mb-1 font-weight-medium">{{$galleries}}</h2>
                             </div>
-                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">MUA</h6>
+                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Galleries</h6>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
                         <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
