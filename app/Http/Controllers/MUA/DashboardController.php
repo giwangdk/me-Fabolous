@@ -5,11 +5,8 @@ namespace App\Http\Controllers\MUA;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\User;
-use App\Category;
 use App\Gallery;
 use App\Makeupartist;
-use App\Pricelist;
 use App\Review;
 use App\Transaction;
 

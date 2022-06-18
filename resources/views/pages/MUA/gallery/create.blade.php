@@ -8,7 +8,7 @@
     <div class="dashboard-heading">
         <div class="row">
             <div class="col-7 align-self-center">
-                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Add New Make Up Artist Photo<!</h3>
+                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Add New {{$makeupartist->name}} Photo<!</h3>
             </div>
         </div>
     </div>
@@ -26,15 +26,14 @@
                 @endif
                 <div class="card mt-2">
                     <div class="card-body">
-                            <form class="" action="{{route('gallery.index')}}" method="POST" enctype="multipart/form-data">
+                            <form class="" action="{{route('gallery-mua.index')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="custom-file mb-3">
                                     <input type="file" class="custom-file-input" 
                                     name="photos" id="validatedCustomFile" required>
                                     <label class="custom-file-label" for="validatedCustomFile">
-                                        Upload makeupartist's photos
+                                        Upload {{$makeupartist->name}} photo
                                     </label>
-                                    <label for="">{{$makeupartist->name}}</label>
                                 </div>
                                 <input type="text" name="mua_id" value={{$makeupartist->id}} hidden>
                                 <div class="col text-right mt-4">

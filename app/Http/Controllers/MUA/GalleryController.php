@@ -33,7 +33,7 @@ class GalleryController extends Controller
                                 Aksi
                                 </button>
                                 <div class="dropdown-menu">
-                                    <form action="' . route('gallery.destroy', $item->id) . '" method="post">
+                                    <form action="' . route('gallery-mua.destroy', $item->id) . '" method="post">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
                                         Hapus
@@ -79,7 +79,7 @@ class GalleryController extends Controller
         $data['photos'] = $request->file('photos')->store('assets/gallery', 'public');
         Gallery::create($data);
 
-        return redirect()->route('gallery.index');
+        return redirect()->route('gallery-mua.index');
     }
 
     /**
@@ -100,6 +100,6 @@ class GalleryController extends Controller
         $item = Gallery::findOrFail($id);
         $item->delete();
 
-        return redirect()->route('gallery.index');
+        return redirect()->route('gallery-mua.index');
     }
 }
