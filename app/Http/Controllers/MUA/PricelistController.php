@@ -36,10 +36,10 @@ class PricelistController extends Controller
                                 Aksi
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="' . route('pricelist.edit', $item->id) . '">
+                                    <a class="dropdown-item" href="' . route('pricelist-mua.edit', $item->id) . '">
                                     Sunting
                                     </a>
-                                    <form action="' . route('pricelist.destroy', $item->id) . '" method="post">
+                                    <form action="' . route('pricelist-mua.destroy', $item->id) . '" method="post">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
                                         Hapus

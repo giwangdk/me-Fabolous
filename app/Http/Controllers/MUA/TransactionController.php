@@ -34,10 +34,10 @@ class TransactionController extends Controller
                                 type="button" data-toggle="dropdown">
                                 Aksi
                                 </button>
-                                <div class="dropdown-menu"> <a class="dropdown-item" href="' . route('transaction.show', $item->id) . '">
+                                <div class="dropdown-menu"> <a class="dropdown-item" href="' . route('transaction-mua.show', $item->id) . '">
                                 Detail
                                 </a>
-                                    <a class="dropdown-item" href="' . route('transaction.edit', $item->id) . '">
+                                    <a class="dropdown-item" href="' . route('transaction-mua.edit', $item->id) . '">
                                     Sunting
                                     </a>
                                 </div>

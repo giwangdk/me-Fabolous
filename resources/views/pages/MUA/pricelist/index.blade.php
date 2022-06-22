@@ -24,7 +24,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('pricelist.create')}}" class="btn btn-primary mb-3">
+                    <a href="{{route('pricelist-mua.create')}}" class="btn btn-primary mb-3">
                         Add Pricelist
                     </a>
                     <div class="table-responsive">

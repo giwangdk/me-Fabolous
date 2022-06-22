@@ -26,7 +26,7 @@
                 @endif
                 <div class="card mt-2">
                     <div class="card-body">
-                            <form class="" action="{{route('pricelist.index')}}" method="POST" enctype="multipart/form-data">
+                            <form class="" action="{{route('pricelist-mua.index')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                 <label for="name">Name Pricelist</label>

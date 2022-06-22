@@ -26,7 +26,7 @@
                 @endif
                 <div class="card mt-2">
                     <div class="card-body">
-                            <form class="" action="{{route('pricelist.update', $item->id)}}" method="POST" enctype="multipart/form-data">
+                            <form class="" action="{{route('pricelist-mua.update', $item->id)}}" method="POST" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                 <div class="form-group">

@@ -7,17 +7,27 @@
 @push('addon-style')
     <style>
         .breadcrumb{
-            margin:10px 40px 0px 40px;
+            margin:10px 20px 0px 20px;
         }
         .detail-transaksi{
-        background: #ffff;
-        margin: 10px 40px 40px 40px;
-        border-radius: 20px;
-        padding:15px;
+        margin: 10px 20px 20px 20px;
         
     }
+    .detail-transaksi-left{
+        
+        background: #ffff;
+        padding:15px;
+        border-radius: 20px;
+    }
+    
+    .detail-transaksi-right{
+        
+        background: rgb(242, 250, 255);
+        padding:15px;
+        border-radius: 20px;
+    }
     h5{
-            color:#683B2B;
+            color:#d6f9ff;
         }
     </style>
 @endpush
@@ -30,31 +40,81 @@
       <li class="breadcrumb-item active" aria-current="page">Detail Transaksi</li>
     </ol>
   </nav>
-    <div class="detail-transaksi">
+  <div class="row detail-transaksi">
+    <div class="col-7 ">
+        
+    <div class="detail-transaksi-left">
         <div class="container-fluid">
                     <h3 class="text-center">Detail Transaksi</h4>
                 <hr>
-                <div class="d-flex">
-                    <div class="col-6">
-                        <h6 class="mb-2 mt-3">Makeup Artist</h6>
-                        <h6 class="mb-2 mt-0">Jenis Makeup</h6>
-                        <h6 class="mb-2 mt-0">Notes</h6>
-                        <br>
-                        <h5>Tanggal Penyewaan</h5>
-                        <br>
-                        <h5>Total Pembayaran</h5>
-                    </div>
-                    
-                    <div class="col-6 text-right">
-                        <h6 class="mb-2 mt-3">{{$item->mua->name}}</h6>
-                        <p class="mb-2">{{$item->pricelist->name}}</p>
-                        <p class="mb-2">{{$item->notes}}</p>
-                        <br>
-                        <p>{{$item->date}}</p>
-                        <br>
-                        <p>Rp. {{$item->total_price}}</p>
-                    </div>
-                </div>
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Booking ID</th>
+                        <td>{{$item->pricelist->name}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Makeup Artist</th>
+                        <td>{{$item->mua->name}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Jenis Makeup</th>
+                        <td>Larry</td>
+                      </tr>
+                      
+                        <th scope="row">Notes</th>
+                        <td>{{$item->notes}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Date</th>
+                        <td>{{$item->date}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Total Harga</th>
+                        <td>{{$item->total_price}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Status Penyewaan</th>
+                        <td>{{$item->status_penyewaan}}</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
         </div>
     </div>
+    </div>
+    <div class="col-5">
+        
+    <div class="detail-transaksi-right">
+        <div class="container-fluid">
+                    <h3 class="text-center">Detail Penyewa</h4>
+                <hr>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Penyewa</th>
+                            <td>{{$item->user->name}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Email</th>
+                            <td>{{$item->email}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Phone Number</th>
+                            <td>{{$item->phone_number}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Address</th>
+                            <td>{{$item->address}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Status pembayaran</th>
+                            <td>{{$item->status_pembayaran}}</td>
+                          </tr>
+                    </tbody>
+                  </table>
+        </div>
+    </div>
+    </div>
+  </div>
  @endsection  

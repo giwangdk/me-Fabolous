@@ -24,7 +24,7 @@
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('pricelist-mua.index')}}"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Price Lists</span></a></li>
-                                    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('review.index')}}"
+                                    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('review-mua.index')}}"
                                         aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span
                                             class="hide-menu">Reviews</span></a></li> <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('transaction-mua.index')}}"
                                                 aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span
