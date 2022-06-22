@@ -36,7 +36,7 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href={{route('transaction.index')}}>Transaksi</a></li>
+      <li class="breadcrumb-item"><a href={{route('transaction-mua.index')}}>Transaksi</a></li>
       <li class="breadcrumb-item active" aria-current="page">Detail Transaksi</li>
     </ol>
   </nav>
@@ -47,7 +47,7 @@
         <div class="container-fluid">
                     <h3 class="text-center">Detail Transaksi</h4>
                 <hr>
-                <table class="table">
+                <table class="table table-striped">
                     <tbody>
                       <tr>
                         <th scope="row">Booking ID</th>
