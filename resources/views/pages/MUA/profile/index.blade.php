@@ -35,7 +35,7 @@
         <div class="row">
             <div class="avatar col-lg-3 col-md-6">
                 <img src="{{
-                    Storage::url($mua->photo)}}" alt="">
+                    $mua ? Storage::url($mua->photo) : ""}}" alt="">
             </div>
             <div class="col-lg-8 col-md-6 d-flex flex-column justify-content-start text-left ml-lg-5">
                     <p class="nama" >

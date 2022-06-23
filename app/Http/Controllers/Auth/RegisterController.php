@@ -71,9 +71,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'roles' => ['required', 'string', 'max:255'],
             'mua_name' => ['nullable', 'string', 'max:255','unique:users'],
-            'is_store_open' => ['required'],
+            'is_store_open' => ['nullable'],
         ]);
     }
 
@@ -89,9 +88,9 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'roles' =>isset($data['is_store_open']) ? 'MUA' : 'USER',
-            'mua_name' => $data['mua_name'],
-            'store_status' => isset($data['is_store_open']) ? 1 : 0,
+            'roles' =>isset($data['mua_name']) ? 'MUA' : 'USER',
+            'mua_name' => isset($data['mua_name']) ? $data['mua_name'] : null,
+            'store_status' =>isset($data['mua_name']) ? 1 : 0,
         ]);
     }
 

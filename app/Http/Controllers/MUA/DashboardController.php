@@ -14,14 +14,29 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
-        $review = Review::where('mua_id', '=', $makeupartist->id)->get();
-        $reviews = $review->count();
+        $reviews=null;
+        $transactions=null;
+        $galleries=null;
 
-        $transaction = Transaction::where('mua_id', '=', $makeupartist->id)->get();
-        $transactions = $transaction->count();
-        $gallery = Gallery::where('mua_id', '=', $makeupartist->id)->get();
-        $galleries = $gallery->count();
+        if(Makeupartist::where('user_id', '=', Auth::user()->id)->exists()){
+            $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
+            if (Review::where('mua_id', '=', $makeupartist->id)->exists()) {
+                $review = Review::where('mua_id', '=', $makeupartist->id)->get();
+                $reviews = $review->count();
+            }
+
+            if (Transaction::where('mua_id', '=', $makeupartist->id)->get()) {
+                $transaction = Transaction::where('mua_id', '=', $makeupartist->id)->get();
+                $transactions = $transaction->count();
+            }
+
+            if ( Gallery::where('mua_id', '=', $makeupartist->id)->get()) {
+                $gallery = Gallery::where('mua_id', '=', $makeupartist->id)->get();
+                $galleries = $gallery->count();
+            }
+           
+        }
         return  view('pages.MUA.dashboard', compact('reviews', 'transactions', 'galleries'));
+        
     }
 }

@@ -21,6 +21,7 @@ Route::get('/about', 'AboutController@index')->name('about');
 Route::get('/detail/{id}', 'DetailController@index')->name('detail');
 Route::post('/detail/{id}', 'DetailController@store')->name('detail');
 Route::get('/book/{id}', 'BookController@index')->name('book');
+Route::get('/my-order', 'MyOrderController@index')->name('my-order');
 
 
 Route::post('/checkout/{id}', 'CheckoutController@process')->name('checkout');
