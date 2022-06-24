@@ -1,14 +1,14 @@
 @extends('layouts.mua')
 
 @section('title')
-    Edit Pricelist
+    Edit Status Penyewaan
 @endsection
 @section('content')
 <div class="container-fluid">
     <div class="dashboard-heading">
         <div class="row">
             <div class="col-7 align-self-center">
-                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Edit Pricelist</h3>
+                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Edit Status Penyewan</h3>
             </div>
         </div>
     </div>
@@ -26,35 +26,35 @@
                 @endif
                 <div class="card mt-2">
                     <div class="card-body">
-                            <form class="" action="{{route('pricelist.update', $item->id)}}" method="POST" enctype="multipart/form-data">
+                            <form class="" action="{{route('transaction-mua.update', $item->id)}}" method="POST" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                 <div class="form-group">
-                                <label for="name">Name Pricelist</label>
-                                <input type="text" class="form-control" id="name" 
+                                <label for="name">Makeup</label>
+                                <input disabled type="text" class="form-control" id="name" 
                                 name="name" placeholder="Name of Pricelis"
-                                value="{{$item->name}}">
+                                value="{{$item->pricelist->name}}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="name">Price</label>
-                                    <input type="number" class="form-control" id="name" 
-                                    name="price" placeholder="Price Make Up"
-                                    value="{{$item->price}}">
+                                    <label for="name">Total Price</label>
+                                    <input disabled type="number" class="form-control" id="name" 
+                                    name="price" 
+                                    value="{{$item->total_price}}">
                                     </div>
 
-                                <div class="form-group">
-                                <label >Description</label>
-                                <textarea class="form-control" id="editor" name="description" rows="3" value="{{old('description', '')}}"></textarea>
-                                </div>
+                                    <div class="form-group">
+                                        <label >Status Pembayaran</label>
+                                        <input disabled  class="form-control" name="status_pembayaran"
+                                        value="{{$item->status_pembayaran}}">
+                                        </div>
                                 
-                                <input type="text" name="mua_id" value={{$makeupartist->id}} hidden>
-                                <label for="">Category</label>
+                                <label for="">Status Penyewaan</label>
                                 <div class="input-group">
                                     <select name="category_id" class="custom-select">
-                                @foreach ($categories as $category)
-                                    <option value="{{$category->id}}">
-                                        {{$category->name}}</option>
-                                    @endforeach
+                                    <option value="{{$item->status_penyewaan}}" selected disabled>{{$item->status_penyewaan}}</option>
+                                    <option value="PENDING">PENDING</option>
+                                    <option value="ONPROGRESS">ONPROGRESS</option>
+                                    <option value="FINISHED">FINISHED</option>
                                 </select>
                                 </div>
                                 <div class="col text-right mt-3">

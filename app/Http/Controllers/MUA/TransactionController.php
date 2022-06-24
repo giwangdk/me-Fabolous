@@ -77,12 +77,8 @@ class TransactionController extends Controller
      */
     public function edit($id)
     {
-        $item = Pricelist::findOrFail($id);
-        $categories = Category::all();
-        
-        $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
-
-        return view('pages.mua.pricelist.edit', compact('item', 'categories', 'makeupartist'));
+        $item = Transaction::with(['pricelist', 'mua', 'user'])->findOrFail($id);
+        return view('pages.mua.transaction.edit', compact('item'));
     }
 
     /**
