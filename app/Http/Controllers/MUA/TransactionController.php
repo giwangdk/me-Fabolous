@@ -18,7 +18,7 @@ class TransactionController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     */       
     public function index()
     {
         $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();

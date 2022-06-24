@@ -38,6 +38,7 @@
                     </a>
                 </li>
 
+
                 @if  (Auth::user() && Auth::user()->roles == 'ADMIN')
                 <li class="nav-item mt-3">
                     <a class="btn btn-pink" href="/admin">Dashboard </a>
@@ -46,6 +47,10 @@
                     <li class="nav-item mt-3">
                         <a class="btn btn-pink" href="/mua-admin">Dashboard </a>
                         </li>
+                        @elseif (Auth::user() && Auth::user()->roles == 'USER')
+                        <li class="nav-item mt-3">
+                            <a class="btn btn-pink" href="/my-order">My Order </a>
+                            </li>
                 @endif
 
                     <li class="nav-item">

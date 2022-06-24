@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Auth;
 class MyOrderController extends Controller
 {
     public function index(){
-            $query = Transaction::where('user_id', '=', Auth::user()->id);
-            $query = Transaction::with(['pricelist', 'mua', 'user']);
-    return view('pages.mua.transaction.detail', compact('query'));
+            $transactions = Transaction::where('user_id', '=', Auth::user()->id)->get();
+            $s = Transaction::with(['pricelist', 'mua', 'user']);
+    return view('pages.my-order', compact('transactions'));
 }
 }
