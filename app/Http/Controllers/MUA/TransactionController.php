@@ -90,15 +90,11 @@ class TransactionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
+        $item = Transaction::findOrFail($id);
+        $item->status_penyewaan = $request->input("status_penyewaan");
+        $item->save();
         
-        $mua = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
-        $data['mua_id'] = $mua->id;
-        $item = Pricelist::findOrFail($id);
-
-        $item->update($data);
-
-        return redirect()->route('pricelist.index');
+        return redirect()->route('transaction-mua.index');
     }
 
     /**

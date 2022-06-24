@@ -50,9 +50,8 @@
                                 
                                 <label for="">Status Penyewaan</label>
                                 <div class="input-group">
-                                    <select name="category_id" class="custom-select">
-                                    <option value="{{$item->status_penyewaan}}" selected disabled>{{$item->status_penyewaan}}</option>
-                                    <option value="PENDING">PENDING</option>
+                                    <select name="status_penyewaan" class="custom-select">
+                                    <option value="{{$item->status_penyewaan}}" selected >{{$item->status_penyewaan}}</option>
                                     <option value="ONPROGRESS">ONPROGRESS</option>
                                     <option value="FINISHED">FINISHED</option>
                                 </select>
