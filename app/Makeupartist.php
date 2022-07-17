@@ -12,6 +12,7 @@ use App\Transaction;
 
 class Makeupartist extends Model
 {
+    protected $table = 'makeup_services';
     protected $fillable = [
         'user_id',
         'name',
