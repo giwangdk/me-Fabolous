@@ -9,6 +9,7 @@ use App\Transaction;
 
 class Pricelist extends Model
 {
+    protected $table = 'makeup_services';
     protected $fillable = ['name', 'price', 'description', 'mua_id',  'category_id'];
 
     public function makeupartist()
