@@ -72,7 +72,7 @@
                             <div class=" card col-12 mt-3 ">
                                 <div class="paket d-flex justify-content-between">
                                     <h5 class="paket">{{$item->name}}</h5>
-                                    <p>Rp. {{number_format($item->price)}}</p>
+                                    <p>DP Rp. {{number_format($item->price_dp)}} /Rp. {{number_format($item->price)}}</p>
                                 </div>
                                 <h6 class="category">{{$item->category->name}}</h6>
                                 <!-- Button trigger modal -->

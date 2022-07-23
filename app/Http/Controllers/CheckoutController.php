@@ -29,7 +29,7 @@ class CheckoutController extends Controller
             'email'=>$request->email,
             'phone_number'=>$request->phone_number,
             'makeup'=>$price_id,
-            'total_price'=>$name_price->price,
+            'total_price'=>$name_price->price_dp,
             'date'=>$request->date,
             'address'=>$request->address,
             'status_pembayaran'=>'UNPAID',

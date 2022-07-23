@@ -39,7 +39,7 @@
                         <br>
                         <h5>Tanggal Penyewaan</h5>
                         <br>
-                        <h5>Total Pembayaran</h5>
+                        <h5>Total Pembayaran DP</h5>
                     </div>
                     
                     <div class="col-6 text-right">
@@ -53,8 +53,10 @@
                         <p>Rp. {{$item->total_price}}</p>
                     </div>
                 </div>
-                
-                <a class="btn btn-logout text-center" href="{{route('bayar', $item->id)}}">Sign In </a>
+                <div class="text-center">
+                    
+                <a class="btn btn-primary text-center d-block" href="{{route('bayar', $item->id)}}"> Booking </a>
+                </div>
                 </div>
             </div>
         </div>

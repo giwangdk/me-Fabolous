@@ -41,6 +41,12 @@
                                     value="{{old('price', '')}}">
                                     </div>
 
+                                    <div class="form-group">
+                                        <label for="name">Price DP</label>
+                                        <input type="number" class="form-control" id="name" 
+                                        name="price_dp" placeholder="Price of Make Up"
+                                        value="{{old('price_dp', '')}}">
+                                        </div>
                                 <div class="form-group">
                                 <label >Description</label>
                                 <textarea class="form-control" id="editor" name="description" rows="3" value="{{old('description', '')}}"></textarea>

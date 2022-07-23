@@ -34,6 +34,7 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Price</th>
+                                    <th>Price DP</th>
                                     <th>Description</th>
                                     <th>Category</th>
                                     <th>Action</th>
@@ -60,7 +61,8 @@
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'name', name: 'name'},             
-                {data: 'price', name: 'price'},
+                {data: 'price', name: 'price'},             
+                {data: 'price_dp', name: 'price_dp'},
                 {data: 'description', name: 'description'},
                 {data: 'category.name', name: 'category.name'},
                 {
