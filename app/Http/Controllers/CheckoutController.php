@@ -38,21 +38,6 @@ class CheckoutController extends Controller
             'notes'=>$request->notes,
         ]);
         
-        $item = Transaction::findOrFail($transactions->id);
-        return view('pages.detail-book', compact('item'));
-
-    }
-
-    public function detail(Request $request, $id)
-    {
-        $item = Transaction::with(['pricelist', 'mua'])->findOrFail($id);
-        return view('pages.detail-book', compact('item'));
-    }
-
-    public function bayar(Request $request, $id)
-    {
-        
-        $item = Transaction::with(['pricelist', 'mua'])->findOrFail($id);
         $kode = 'STORE-'.mt_rand(000000, 999999);
 
 
@@ -69,13 +54,13 @@ class CheckoutController extends Controller
         $midtrans = [
             'transaction_details' =>[
                 'order_id' => $kode,
-                'gross_amount' => (int) $item->total_price
+                'gross_amount' => (int) $name_price->price_dp
             ],
             'customer_details' =>[
-                'nama'=>$item->nama,
-                'email'=>$item->email,
-                           'phone_number'=>$item->phone_number,
-               'address'=>$item->address,
+                'nama'=>$request->nama,
+                'email'=>$request->email,
+                           'phone_number'=>$request->phone_number,
+               'address'=>$request->address,
             ],
             'enabled_payments' =>[
                 'gopay', 'permata_va', 'bank_transfer'
@@ -83,17 +68,27 @@ class CheckoutController extends Controller
             'vtweb'=>[]
             ];
 
-                        
-            try {
-                // Get Snap Payment Page URL
-                $paymentUrl = Snap::createTransaction($midtrans)->redirect_url;
+            $snapToken = Snap::getSnapToken($midtrans);
+            // try {
+            //     // Get Snap Payment Page URL
+            //     $paymentUrl = Snap::createTransaction($midtrans)->redirect_url;
                 
-                return redirect($paymentUrl);
-            }
-            catch (Exception $e) {
-                echo $e->getMessage();
-            }
+            //     return redirect($paymentUrl);
+            // }
+            // catch (Exception $e) {
+            //     echo $e->getMessage();
+            // }
+        $item = Transaction::findOrFail($transactions->id);
+        return view('pages.detail-book', compact(['item', 'snapToken']));
+
     }
+
+    public function detail(Request $request, $id)
+    {
+        $item = Transaction::with(['pricelist', 'mua'])->findOrFail($id);
+            return view('pages.detail-book', compact('snapToken'));
+    }
+
 
     public function callback(Request $request)
     {

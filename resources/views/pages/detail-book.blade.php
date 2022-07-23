@@ -55,10 +55,25 @@
                 </div>
                 <div class="text-center">
                     
-                <a class="btn btn-primary text-center d-block" href="{{route('bayar', $item->id)}}"> Booking </a>
+                <button class="btn btn-primary text-center d-block" id="pay-button"> Booking </button>
                 </div>
                 </div>
             </div>
         </div>
     </div>
  @endsection  
+
+    @push('addon-script')
+    <script type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="SB-Mid-client-mMsOrclcSH01duf_"></script>
+    <script type="text/javascript">
+        // For example trigger on button clicked, or any time you need
+        var payButton = document.getElementById('pay-button');
+        payButton.addEventListener('click', function () {
+          // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+          window.snap.pay('{{$snapToken}}');
+          // customer will be redirected after completing payment pop-up
+        });
+      </script>
+    @endpush
