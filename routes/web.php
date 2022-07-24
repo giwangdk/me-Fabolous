@@ -25,14 +25,14 @@ Route::get('/my-order', 'MyOrderController@index')->name('my-order');
 
 
 Route::post('/checkout/{id}', 'CheckoutController@process')->name('checkout');
-Route::get('/bayar/{id}', 'CheckoutController@bayar')->name('bayar');
+Route::post('/bayar/{id}', 'CheckoutController@bayar')->name('bayar');
 // Route::post('/detail-book/{id}', 'CheckoutController@detail')->name('detail-book');
 Route::post('/checkout/callback', 'CheckoutController@callback')->name('midtrans-callback');
 
 
 
 
-Route::prefix('admin')
+Route::prefix('admin') 
     ->middleware(['auth', 'admin'])
     ->namespace('Admin')
     ->group(function () {

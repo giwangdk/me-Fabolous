@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class MyOrderController extends Controller
 {
     public function index(){
-            $transactions = Invoice::where('user_id', '=', Auth::user()->id)->get();
-            $transactions = Invoice::with(['transaction', 'pricelist', 'mua', 'user']);
+            $transactions = Invoice::with(['transaction', 'pricelist', 'mua', 'user'])->where('user_id', '=', Auth::user()->id)->get();
     return view('pages.my-order', compact('transactions'));
 }
 }

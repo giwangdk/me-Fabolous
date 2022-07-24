@@ -51,7 +51,7 @@
                     <tbody>
                       <tr>
                         <th scope="row">Booking ID</th>
-                        <td>{{$item->transaction->kode}}</td>
+                        <td>{{$item->order_id}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Makeup Artist</th>
@@ -76,6 +76,10 @@
                       <tr>
                         <th scope="row">Status Penyewaan</th>
                         <td>{{$item->status_penyewaan}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Tipe Pembayaran</th>
+                        <td>{{$item->payment_type}}</td>
                       </tr>
                       
                     </tbody>

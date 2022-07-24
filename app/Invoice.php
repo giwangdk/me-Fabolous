@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Invoice extends Model
 {
     protected $fillable = [
-        'transaction_id', 'status_pembayaran','status_penyewaan', 'kode', 'jenis_makeup'
+        'transaction_id', 'user_id', 'mua_id', 'total_price', 'status_pembayaran','status_penyewaan', 'transaction_code', 'payment_type', 'payment_code', 'pdf_url', 'jenis_makeup', 'order_id', 
     ];
 
     /**

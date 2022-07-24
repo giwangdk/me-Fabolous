@@ -59,7 +59,7 @@
             },
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'transaction.kode', name: 'kode', width: '15%' },
+                {data: 'order_id', name: 'order_id', width: '15%' },
                 {data: 'user.name', name: 'user.name'},            
                 {data: 'pricelist.name', name: 'pricelist.name'},            
                 {data: 'transaction.date', name: 'transaction.date', width: '15%' }, 
