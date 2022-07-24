@@ -24,21 +24,21 @@
             @forelse ($transactions as $item)
             <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="{{$incrementCategory+= 100}}">
                 <div class="card">
-                    <h5 class="px-3 pt-1 text-primary">{{$item->kode}}</h5>
+                    <h5 class="px-3 pt-1 text-primary">{{$item->transaction->kode}}</h5>
                     <div class="card-title px-3  mt-1 d-flex justify-content-between">
                         <h5>{{$item->mua->name}}</h5>
                         <h6>{{$item->status_penyewaan}}</h6>
                     </div>
                     <div class="card-body px-3">
                         <h3>{{$item->pricelist->name}}</h3>
-                        <p class="text-muted">{{$item->date}}</p>
+                        <p class="text-muted">{{$item->transaction->date}}</p>
                     </div>
                     <div class="card-bottom px-3 d-flex justify-content-between">
                         <h6 class="text-muted">
                             Total
                         </h6>
                         <h5>
-                            Rp. {{$item->total_price}}
+                            Rp. {{$item->transaction->total_price}}
                         </h5>
                     </div>
                     <div class="btn btn-primary mx-3 my-3">{{$item->status_pembayaran}}</div>
