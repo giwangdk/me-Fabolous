@@ -37,4 +37,9 @@ class Transaction extends Model
     {
         return $this->belongsTo(Pricelist::class, 'makeup', 'id');
     }
+    
+    public function invoice()
+    {
+        return $this->belongsTo(Makeupartist::class, 'transaction_id', 'id');
+    }
 }

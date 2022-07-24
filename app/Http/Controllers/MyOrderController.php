@@ -10,7 +10,8 @@ class MyOrderController extends Controller
 {
     public function index(){
             $transactions = Transaction::where('user_id', '=', Auth::user()->id)->get();
-            $s = Transaction::with(['pricelist', 'mua', 'user']);
+            $transactions = Transaction::where('status_pembayaran', '=', 'PAID')->get();
+            $transactions = Transaction::with(['pricelist', 'mua', 'user']);
     return view('pages.my-order', compact('transactions'));
 }
 }

@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Storage;
 use App\Category;
 use Illuminate\Support\Facades\Auth;
 use App\Transaction;
+use App\Invoice;
 use App\Makeupartist;
 
-class TransactionController extends Controller
+class InvoiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,9 +24,8 @@ class TransactionController extends Controller
     {
         $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         if (request()->ajax()) {
-            $query = Transaction::where('mua_id', '=', $makeupartist->id);
-            $query = Transaction::where('status_pembayaran', '=', 'PAID');
-            $query = Transaction::with(['pricelist', 'mua', 'user']);
+            $query = Invoice::where('mua_id', '=', $makeupartist->id);
+            $query = Transaction::with(['transaction', 'mua', 'user']);
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
@@ -35,10 +35,10 @@ class TransactionController extends Controller
                                 type="button" data-toggle="dropdown">
                                 Aksi
                                 </button>
-                                <div class="dropdown-menu"> <a class="dropdown-item" href="' . route('transaction-mua.show', $item->id) . '">
+                                <div class="dropdown-menu"> <a class="dropdown-item" href="' . route('invoice-mua.show', $item->id) . '">
                                 Detail
                                 </a>
-                                    <a class="dropdown-item" href="' . route('transaction-mua.edit', $item->id) . '">
+                                    <a class="dropdown-item" href="' . route('invoice-mua.edit', $item->id) . '">
                                     Sunting
                                     </a>
                                 </div>
@@ -66,8 +66,8 @@ class TransactionController extends Controller
      */
     public function show($id)
     {
-        $item = Transaction::with(['pricelist', 'mua', 'user'])->findOrFail($id);
-        return view('pages.mua.transaction.detail', compact('item'));
+        $item = Invoice::with(['transaction', 'mua', 'user'])->findOrFail($id);
+        return view('pages.mua.invoice.detail', compact('item'));
     }
 
     /**    
@@ -78,8 +78,8 @@ class TransactionController extends Controller
      */
     public function edit($id)
     {
-        $item = Transaction::with(['pricelist', 'mua', 'user'])->findOrFail($id);
-        return view('pages.mua.transaction.edit', compact('item'));
+        $item = Invoice::with(['pricelist', 'mua', 'user'])->findOrFail($id);
+        return view('pages.mua.invoice.edit', compact('item'));
     }
 
     /**
@@ -91,11 +91,11 @@ class TransactionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $item = Transaction::findOrFail($id);
+        $item = Invoice::findOrFail($id);
         $item->status_penyewaan = $request->input("status_penyewaan");
         $item->save();
         
-        return redirect()->route('transaction-mua.index');
+        return redirect()->route('invoice-mua.index');
     }
 
     /**
@@ -106,7 +106,7 @@ class TransactionController extends Controller
      */
     public function destroy($id)
     {
-        $item = Pricelist::findOrFail($id);
+        $item = Invoice::findOrFail($id);
         $item->delete();
 
         return redirect()->route('pricelist.index');
