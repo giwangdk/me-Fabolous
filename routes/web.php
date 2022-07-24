@@ -44,6 +44,7 @@ Route::prefix('admin')
         Route::resource('pricelist', 'PricelistController');
         Route::resource('review', 'ReviewController');
         Route::resource('transaction', 'TransactionController');
+        Route::resource('invoice', 'InvoiceController');
     });
 
     

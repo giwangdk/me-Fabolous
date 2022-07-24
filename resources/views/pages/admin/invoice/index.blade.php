@@ -35,6 +35,7 @@
                                     <th>Jenis Makeup</th>
                                     <th>Date</th>
                                     <th>Status Pembayaran</th>
+                                    <th>Status Penyewaan</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -57,12 +58,13 @@
             },
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'kode', name: 'kode', width: '15%' },
+                {data: 'transaction.kode', name: 'transaction.kode', width: '15%' },
                 {data: 'mua.name', name: 'mua.name' },
                 {data: 'user.name', name: 'user.name'},            
                 {data: 'pricelist.name', name: 'pricelist.name'},            
-                {data: 'date', name: 'date', width: '15%'}, 
+                {data: 'transaction.date', name: 'transaction.date', width: '15%'}, 
                 {data: 'status_pembayaran', name: 'status_pembayaran'},
+                {data: 'status_penyewaan', name: 'status_penyewaan'},
             ],
         })
     </script>
