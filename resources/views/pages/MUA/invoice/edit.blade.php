@@ -26,14 +26,14 @@
                 @endif
                 <div class="card mt-2">
                     <div class="card-body">
-                            <form class="" action="{{route('transaction-mua.update', $item->id)}}" method="POST" enctype="multipart/form-data">
+                            <form class="" action="{{route('invoice-mua.update', $item->id)}}" method="POST" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                 <div class="form-group">
                                 <label for="name">Makeup</label>
                                 <input disabled type="text" class="form-control" id="name" 
                                 name="name" placeholder="Name of Pricelis"
-                                value="{{$item->transaction->makeup}}">
+                                value="{{$item->pricelist->name}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Total Price</label>

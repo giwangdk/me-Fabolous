@@ -50,4 +50,8 @@ class Makeupartist extends Model
     {
         return $this->hasMany(Transaction::class, 'mua_id', 'id');
     }
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class, 'mua_id', 'id');
+    }
 }

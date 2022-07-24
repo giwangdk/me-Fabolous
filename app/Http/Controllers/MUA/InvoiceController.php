@@ -25,7 +25,8 @@ class InvoiceController extends Controller
         $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         if (request()->ajax()) {
             $query = Invoice::where('mua_id', '=', $makeupartist->id);
-            $query = Transaction::with(['transaction', 'mua', 'user']);
+            $query = Invoice::with(['transaction', 'pricelist', 'mua', 'user']);
+            
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
@@ -49,7 +50,7 @@ class InvoiceController extends Controller
                 ->rawColumns(['action'])
                 ->make();
         }
-        return view('pages.mua.transaction.index');
+        return view('pages.mua.invoice.index');
     }
 
     /**
@@ -66,7 +67,7 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-        $item = Invoice::with(['transaction', 'mua', 'user'])->findOrFail($id);
+        $item = Invoice::with(['transaction', 'pricelist', 'mua', 'user'])->findOrFail($id);
         return view('pages.mua.invoice.detail', compact('item'));
     }
 
@@ -78,7 +79,7 @@ class InvoiceController extends Controller
      */
     public function edit($id)
     {
-        $item = Invoice::with(['pricelist', 'mua', 'user'])->findOrFail($id);
+        $item = Invoice::with(['transaction', 'pricelist', 'mua', 'user'])->findOrFail($id);
         return view('pages.mua.invoice.edit', compact('item'));
     }
 

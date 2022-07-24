@@ -36,8 +36,8 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href={{route('transaction-mua.index')}}>Transaksi</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Detail Transaksi</li>
+      <li class="breadcrumb-item"><a href={{route('invoice-mua.index')}}>Invoice</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Detail Invoice</li>
     </ol>
   </nav>
   <div class="row detail-transaksi">
@@ -51,7 +51,7 @@
                     <tbody>
                       <tr>
                         <th scope="row">Booking ID</th>
-                        <td>{{$item->transaction->makeup}}</td>
+                        <td>{{$item->transaction->kode}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Makeup Artist</th>
@@ -59,7 +59,7 @@
                       </tr>
                       <tr>
                         <th scope="row">Jenis Makeup</th>
-                        <td>Larry</td>
+                        <td>{{$item->pricelist->name}}</td>
                       </tr>
                       
                         <th scope="row">Notes</th>

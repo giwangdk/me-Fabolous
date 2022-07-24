@@ -24,7 +24,6 @@ class TransactionController extends Controller
         $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         if (request()->ajax()) {
             $query = Transaction::where('mua_id', '=', $makeupartist->id);
-            $query = Transaction::where('status_pembayaran', '=', 'PAID');
             $query = Transaction::with(['pricelist', 'mua', 'user']);
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {

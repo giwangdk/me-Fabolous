@@ -24,4 +24,8 @@ class Pricelist extends Model
     {
         return $this->hasMany(Transaction::class, 'makeup', 'id');
     }
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class, 'jenis_makeup', 'id');
+    }
 }

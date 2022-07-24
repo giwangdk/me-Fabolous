@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Invoice extends Model
 {
     protected $fillable = [
-        'transaction_id', 'status_pembayaran','status_penyewaan', 'kode',
+        'transaction_id', 'status_pembayaran','status_penyewaan', 'kode', 'jenis_makeup'
     ];
 
     /**
@@ -26,8 +26,20 @@ class Invoice extends Model
      * @var array
      */
 
-    public function invoice()
+    public function user()
     {
-        return $this->belongsTo(AppTransaction::class, 'transaction_id', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+    public function mua()
+    {
+        return $this->belongsTo(Makeupartist::class, 'mua_id', 'id');
+    }
+    public function pricelist()
+    {
+        return $this->belongsTo(Pricelist::class, 'jenis_makeup', 'id');
+    }
+    public function transaction()
+    {
+        return $this->belongsTo(Transaction::class, 'transaction_id', 'id');
     }
 }

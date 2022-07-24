@@ -1,13 +1,14 @@
 @extends('layouts.mua')
 
 @section('title')
-    Dashboard Admin Pricelist
+    Dashboard Admin Invoices
 @endsection
 @section('content')
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-7 align-self-center">
-            <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">List of My Transactions<!</h3>
+            <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">List of My Invoices!</h3>
+            <p>Berisi daftar transaksi yang sudah dibayar oleh penyewa</p>
             <div class="d-flex align-items-center">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb m-0 p-0">
@@ -60,8 +61,8 @@
                 {data: 'id', name: 'id'},
                 {data: 'transaction.kode', name: 'kode', width: '15%' },
                 {data: 'user.name', name: 'user.name'},            
-                {data: 'transaction.makeup', name: 'transaction.makeup'},            
-                {data: 'trasnaction.date', name: 'trasnaction.date', width: '15%' }, 
+                {data: 'pricelist.name', name: 'pricelist.name'},            
+                {data: 'transaction.date', name: 'transaction.date', width: '15%' }, 
                 {data: 'status_pembayaran', name: 'status_pembayaran'},
                 {data: 'status_penyewaan', name: 'status_penyewaan'},
                 {

@@ -40,6 +40,6 @@ class Transaction extends Model
     
     public function invoice()
     {
-        return $this->belongsTo(Makeupartist::class, 'transaction_id', 'id');
+        return $this->hasOne(Invoice::class, 'transaction_id', 'id');
     }
 }
