@@ -29,12 +29,10 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Book Id</th>
                                     <th>Makeup Artist</th>
                                     <th>Penyewa</th>
                                     <th>Jenis Makeup</th>
                                     <th>Date</th>
-                                    <th>Status Pembayaran</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -57,12 +55,10 @@
             },
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'kode', name: 'kode', width: '15%' },
                 {data: 'mua.name', name: 'mua.name' },
                 {data: 'user.name', name: 'user.name'},            
                 {data: 'pricelist.name', name: 'pricelist.name'},            
                 {data: 'date', name: 'date', width: '15%'}, 
-                {data: 'status_pembayaran', name: 'status_pembayaran'},
             ],
         })
     </script>
