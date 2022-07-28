@@ -44,7 +44,9 @@
                         </div>
                     </div>
                     </div>
+                    @auth
                     <a href="{{route('book', $mua->id)}}" class="btn btn-primary w-100">Isi Form Book</a>
+                    @endauth
                 </div>
             </div>
             <div class="col-md-8 col-sm-12">

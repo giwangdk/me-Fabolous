@@ -67,16 +67,7 @@ class CheckoutController extends Controller
             'vtweb'=>[]
             ];
 
-            $snapToken = Snap::getSnapToken($midtrans);
-            // try {
-            //     // Get Snap Payment Page URL
-            //     $paymentUrl = Snap::createTransaction($midtrans)->redirect_url;
-                
-            //     return redirect($paymentUrl);
-            // }
-            // catch (Exception $e) {
-            //     echo $e->getMessage();
-            // }
+        $snapToken = Snap::getSnapToken($midtrans);
         $item = Transaction::findOrFail($transactions->id);
         return view('pages.detail-book', compact(['item', 'snapToken']));
 
