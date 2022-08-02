@@ -17,7 +17,10 @@ class DetailController extends Controller
     {
         $mua = Makeupartist::with(['galleries', 'pricelists', 'reviews'])->where('id', $id)->firstOrFail();
 
-        return view('pages.detail', compact('mua'));
+        $pricelist = Pricelist::where('mua_id', '=', $mua->id)->get();
+        $pricelists = $pricelist->count();
+
+        return view('pages.detail', compact(['mua', 'pricelists']));
     }
 
     public function store(Request $request)

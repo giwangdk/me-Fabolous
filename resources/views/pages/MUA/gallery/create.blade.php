@@ -30,7 +30,7 @@
                                 @csrf
                                 <div class="custom-file mb-3">
                                     <input type="file" class="custom-file-input" 
-                                    name="photos" id="validatedCustomFile" required>
+                                    name="photos" id="validatedCustomFile" required multiple>
                                     <label class="custom-file-label" for="validatedCustomFile">
                                         Upload {{$makeupartist->name}} photo
                                     </label>

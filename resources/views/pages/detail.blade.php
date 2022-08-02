@@ -20,10 +20,8 @@
                 <div class="card detail-mua">
                     
                     <div class="card-top card-mua d-flex row">
-                    <div class="col-2 mr-1">
+                    <div class="d-flex pl-3 ">
                         <img src="{{Storage::url($mua->photo)}}" alt="">
-                    </div>
-                    <div class="col-9">
                         <p class="align-self-center ml-3">{{$mua->name}}</p>
                     </div>
                     </div>
@@ -45,7 +43,9 @@
                     </div>
                     </div>
                     @auth
-                    <a href="{{route('book', $mua->id)}}" class="btn btn-primary w-100">Isi Form Book</a>
+                    @if($pricelists != null)
+                        <a href="{{route('book', $mua->id)}}" class="btn btn-primary w-100">Isi Form Book</a>
+                    @endif
                     @endauth
                 </div>
             </div>

@@ -24,8 +24,7 @@ class PricelistController extends Controller
         
         $makeupartist = Makeupartist::where('user_id', '=', Auth::user()->id)->get()->first();
         if (request()->ajax()) {
-            $query = Pricelist::where('mua_id', '=', $makeupartist->id);
-            $query = Pricelist::with(['category']);
+            $query = Pricelist::where('mua_id', '=', $makeupartist->id)->with(['category']);
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
@@ -82,7 +81,7 @@ class PricelistController extends Controller
         $data['mua_id'] = $mua->id;
         Pricelist::create($data);
 
-        return redirect()->route('pricelist.index');
+        return redirect()->route('pricelist-mua.index');
     }
 
     /**
@@ -129,7 +128,7 @@ class PricelistController extends Controller
 
         $item->update($data);
 
-        return redirect()->route('pricelist.index');
+        return redirect()->route('pricelist-mua.index');
     }
 
     /**
@@ -143,6 +142,6 @@ class PricelistController extends Controller
         $item = Pricelist::findOrFail($id);
         $item->delete();
 
-        return redirect()->route('pricelist.index');
+        return redirect()->route('pricelist-mua.index');
     }
 }

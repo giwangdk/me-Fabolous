@@ -9,7 +9,7 @@
             <!-- ============================================================== -->
             <div class="navbar-brand">
                 <!-- Logo icon -->
-                <a href="index.html">
+                <a href="/">
                     <span class="logo-text" style="font-weight: 600; letter-spacing:2px;">
                     me.Fabuolous
                     </span>

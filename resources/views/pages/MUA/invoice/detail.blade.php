@@ -36,8 +36,8 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href={{route('invoice-mua.index')}}>Invoice</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Detail Invoice</li>
+      <li class="breadcrumb-item"><a href={{route('invoice-mua.index')}}>Transaction</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Detail Transaction</li>
     </ol>
   </nav>
   <div class="row detail-transaksi">

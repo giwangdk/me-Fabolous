@@ -59,8 +59,7 @@ Route::prefix('admin')
         Route::resource('gallery', 'GalleryController', ['names' => 'gallery-mua']);
         Route::resource('pricelist', 'PricelistController', ['names' => 'pricelist-mua']);
         Route::resource('review', 'ReviewController', ['names' => 'review-mua']);
-        Route::resource('transaction', 'TransactionController', ['names' => 'transaction-mua']);
-        Route::resource('invoice', 'InvoiceController', ['names' => 'invoice-mua']);
+        Route::resource('transaction', 'InvoiceController', ['names' => 'invoice-mua']);
     });
 
 

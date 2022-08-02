@@ -24,7 +24,8 @@ class GalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            'photos' => 'required|image',
+            'photos' => 'required',
+            'photos.*' => 'mimes:jpg,jpeg,png',
             'mua_id' => 'required',
         ];
     }
